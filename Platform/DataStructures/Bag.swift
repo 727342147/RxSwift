@@ -29,7 +29,7 @@ Time and space complexity of insertion and deletion is O(n).
 
 It is suitable for storing small number of elements.
 */
-struct Bag<T> : CustomDebugStringConvertible {
+struct Bag<T>: CustomDebugStringConvertible {
     /// Type of identifier for inserted elements.
     typealias KeyType = BagKey
     
@@ -47,7 +47,7 @@ struct Bag<T> : CustomDebugStringConvertible {
     var _pairs = ContiguousArray<Entry>()
 
     // last is sparse dictionary
-    var _dictionary: [BagKey : T]? = nil
+    var _dictionary: [BagKey: T]? = nil
 
     var _onlyFastPath = true
 
@@ -136,7 +136,7 @@ struct Bag<T> : CustomDebugStringConvertible {
 
 extension Bag {
     /// A textual representation of `self`, suitable for debugging.
-    var debugDescription : String {
+    var debugDescription: String {
         return "\(self.count) elements in Bag"
     }
 }

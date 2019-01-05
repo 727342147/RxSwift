@@ -77,11 +77,11 @@ fileprivate protocol ReusableView: class {
     func prepareForReuse()
 }
 
-extension WikipediaSearchCell : ReusableView {
+extension WikipediaSearchCell: ReusableView {
 
 }
 
-extension CollectionViewImageCell : ReusableView {
+extension CollectionViewImageCell: ReusableView {
 
 }
 

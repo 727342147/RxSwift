@@ -10,7 +10,7 @@
  Represents an observable wrapper that can be connected and disconnected from its underlying observable sequence.
  */
 public class ConnectableObservable<Element>
-    : Observable<Element>
+   : Observable<Element>
     , ConnectableObservableType {
 
     /**
@@ -147,13 +147,13 @@ extension ObservableType {
     }
 }
 
-final fileprivate class Connection<S: SubjectType> : ObserverType, Disposable {
+final fileprivate class Connection<S: SubjectType>: ObserverType, Disposable {
     typealias E = S.SubjectObserverType.E
 
     private var _lock: RecursiveLock
     // state
     private var _parent: ConnectableObservableAdapter<S>?
-    private var _subscription : Disposable?
+    private var _subscription: Disposable?
     private var _subjectObserver: S.SubjectObserverType
 
     private var _disposed: Bool = false
@@ -195,7 +195,7 @@ final fileprivate class Connection<S: SubjectType> : ObserverType, Disposable {
 }
 
 final fileprivate class ConnectableObservableAdapter<S: SubjectType>
-    : ConnectableObservable<S.E> {
+   : ConnectableObservable<S.E> {
     typealias ConnectionType = Connection<S>
 
     fileprivate let _source: Observable<S.SubjectObserverType.E>
@@ -239,13 +239,13 @@ final fileprivate class ConnectableObservableAdapter<S: SubjectType>
         return subject
     }
 
-    override func subscribe<O : ObserverType>(_ observer: O) -> Disposable where O.E == S.E {
+    override func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == S.E {
         return self.lazySubject.subscribe(observer)
     }
 }
 
 final fileprivate class RefCountSink<CO: ConnectableObservableType, O: ObserverType>
-    : Sink<O>
+   : Sink<O>
     , ObserverType where CO.E == O.E {
     typealias Element = O.E
     typealias Parent = RefCount<CO>

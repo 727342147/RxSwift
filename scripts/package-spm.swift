@@ -84,7 +84,7 @@ func isExtensionAllowed(_ path: String) -> Bool {
 
 func checkExtension(_ path: String) throws {
     if !isExtensionAllowed(path) {
-        throw NSError(domain: "Security", code: -1, userInfo: ["path" : path])
+        throw NSError(domain: "Security", code: -1, userInfo: ["path": path])
     }
 }
 
@@ -108,7 +108,7 @@ func packageRelativePath(_ paths: [String], targetDirName: String, excluded: [St
         fileManager.fileExists(atPath: sourcePath, isDirectory: &isDirectory)
 
         let files: [String] = isDirectory.boolValue ? fileManager.subpaths(atPath: sourcePath)!
-            : [sourcePath]
+           : [sourcePath]
 
         for file in files {
             if !isExtensionAllowed(file) {
@@ -214,7 +214,7 @@ func buildAllTestsTarget(_ testsPath: String) throws {
         let methods = reducedMethods[name]!
 
         mainContent.append("")
-        mainContent.append("final class \(name)_ : \(name), RxTestCase {")
+        mainContent.append("final class \(name)_: \(name), RxTestCase {")
         mainContent.append("    #if os(macOS)")
         mainContent.append("    required override init() {")
         mainContent.append("        super.init()")

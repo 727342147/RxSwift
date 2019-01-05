@@ -81,7 +81,7 @@ class GitHubDefaultValidationService: GitHubValidationService {
 }
 
 
-class GitHubDefaultAPI : GitHubAPI {
+class GitHubDefaultAPI: GitHubAPI {
     let URLSession: Foundation.URLSession
 
     static let sharedAPI = GitHubDefaultAPI(

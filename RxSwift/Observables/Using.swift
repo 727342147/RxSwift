@@ -21,7 +21,7 @@ extension ObservableType {
     }
 }
 
-final fileprivate class UsingSink<ResourceType: Disposable, O: ObserverType> : Sink<O>, ObserverType {
+final fileprivate class UsingSink<ResourceType: Disposable, O: ObserverType>: Sink<O>, ObserverType {
     typealias SourceType = O.E
     typealias Parent = Using<SourceType, ResourceType>
 
@@ -82,7 +82,7 @@ final fileprivate class Using<SourceType, ResourceType: Disposable>: Producer<So
         _observableFactory = observableFactory
     }
     
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == E {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == E {
         let sink = UsingSink(parent: self, observer: observer, cancel: cancel)
         let subscription = sink.run()
         return (sink: sink, subscription: subscription)

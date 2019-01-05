@@ -20,7 +20,7 @@ fileprivate extension AnimatableSectionModelType {
 
 public enum Diff {
 
-    public enum Error : Swift.Error, CustomDebugStringConvertible {
+    public enum Error: Swift.Error, CustomDebugStringConvertible {
 
         case duplicateItem(item: Any)
         case duplicateSection(section: Any)
@@ -40,7 +40,7 @@ public enum Diff {
         }
     }
 
-    private enum EditEvent : CustomDebugStringConvertible {
+    private enum EditEvent: CustomDebugStringConvertible {
         case inserted           // can't be found in old sections
         case insertedAutomatically           // Item inside section being inserted
         case deleted            // Was in old, not in new, in it's place is something "not new" :(, otherwise it's Updated
@@ -71,7 +71,7 @@ public enum Diff {
         }
     }
 
-    private struct SectionAssociatedData : CustomDebugStringConvertible {
+    private struct SectionAssociatedData: CustomDebugStringConvertible {
         var event: EditEvent
         var indexAfterDelete: Int?
         var moveIndex: Int?
@@ -99,13 +99,13 @@ public enum Diff {
             }
         }
 
-        static var initial : ItemAssociatedData {
+        static var initial: ItemAssociatedData {
             return ItemAssociatedData(event: .untouched, indexAfterDelete: nil, moveIndex: nil)
         }
     }
 
-    private static func indexSections<S: AnimatableSectionModelType>(_ sections: [S]) throws -> [S.Identity : Int] {
-        var indexedSections: [S.Identity : Int] = [:]
+    private static func indexSections<S: AnimatableSectionModelType>(_ sections: [S]) throws -> [S.Identity: Int] {
+        var indexedSections: [S.Identity: Int] = [:]
         for (i, section) in sections.enumerated() {
             guard indexedSections[section.identity] == nil else {
                 #if DEBUG
@@ -126,7 +126,7 @@ public enum Diff {
     //================================================================================
     // swift dictionary optimizations {
 
-    private struct OptimizedIdentity<E: Hashable> : Hashable {
+    private struct OptimizedIdentity<E: Hashable>: Hashable {
 
         let hashValue: Int
         let identity: UnsafePointer<E>

@@ -13,7 +13,7 @@ import UIKit
 import RxCocoa
 
 open class CollectionViewSectionedDataSource<S: SectionModelType>
-    : NSObject
+   : NSObject
     , UICollectionViewDataSource
     , SectionedViewDataSourceType {
     public typealias I = S.Item

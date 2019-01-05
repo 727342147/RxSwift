@@ -9,7 +9,7 @@
 import XCTest
 import RxSwift
 
-class VariableTest : RxTest {
+class VariableTest: RxTest {
     func testVariable_initialValues() {
         let a = Variable(1)
         let b = Variable(2)
@@ -78,7 +78,7 @@ class VariableTest : RxTest {
         // This will immediately print:
         //      Next value of c = 3
         // because variables have initial values (starting element)
-        var latestValueOfC : Int? = nil
+        var latestValueOfC: Int? = nil
         // let _ = doesn't retain.
         let d/*: Disposable*/  = c
             .subscribe(onNext: { c in

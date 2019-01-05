@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxTest
 
-class ObservableBufferTest : RxTest {
+class ObservableBufferTest: RxTest {
 }
 
 extension ObservableBufferTest {

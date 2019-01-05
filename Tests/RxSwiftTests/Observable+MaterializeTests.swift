@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxTest
 
-class ObservableMaterializeTest : RxTest {
+class ObservableMaterializeTest: RxTest {
 }
 
 extension ObservableMaterializeTest {

@@ -9,7 +9,7 @@
 @testable import RxSwift
 import XCTest
 
-class QueueTest : RxTest {
+class QueueTest: RxTest {
     
     override func setUp() {
         super.setUp()

@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxTest
 
-class ObservableToArrayTest : RxTest {
+class ObservableToArrayTest: RxTest {
 
 }
 

@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxTest
 
-class ObservableTimeoutTest : RxTest {
+class ObservableTimeoutTest: RxTest {
 }
 
 extension ObservableTimeoutTest {

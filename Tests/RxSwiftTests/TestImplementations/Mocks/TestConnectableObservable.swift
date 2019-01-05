@@ -8,7 +8,7 @@
 
 import RxSwift
 
-final class TestConnectableObservable<S: SubjectType> : ConnectableObservableType where S.E == S.SubjectObserverType.E {
+final class TestConnectableObservable<S: SubjectType>: ConnectableObservableType where S.E == S.SubjectObserverType.E {
     typealias E = S.E
 
     let _o: ConnectableObservable<S.E>
@@ -21,7 +21,7 @@ final class TestConnectableObservable<S: SubjectType> : ConnectableObservableTyp
         return _o.connect()
     }
     
-    func subscribe<O : ObserverType>(_ observer: O) -> Disposable where O.E == E {
+    func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == E {
         return _o.subscribe(observer)
     }
 }

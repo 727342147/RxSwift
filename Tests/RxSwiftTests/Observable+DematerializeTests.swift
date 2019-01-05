@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxTest
 
-class ObservableDematerializeTest : RxTest {
+class ObservableDematerializeTest: RxTest {
 }
 
 extension ObservableDematerializeTest {

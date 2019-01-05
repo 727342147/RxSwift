@@ -18,7 +18,7 @@
         /**
          Reactive wrapper for `delegate` message.
          */
-        public var didFinishPickingMediaWithInfo: Observable<[String : AnyObject]> {
+        public var didFinishPickingMediaWithInfo: Observable<[String: AnyObject]> {
             return delegate
                 .methodInvoked(#selector(UIImagePickerControllerDelegate.imagePickerController(_:didFinishPickingMediaWithInfo:)))
                 .map({ (a) in

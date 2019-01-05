@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import class Foundation.NSNull
 
-final class AssumptionsTest : RxTest {
+final class AssumptionsTest: RxTest {
     
     func testResourceLeaksDetectionIsTurnedOn() {
 #if TRACE_RESOURCES

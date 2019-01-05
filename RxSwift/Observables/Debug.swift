@@ -32,7 +32,7 @@ fileprivate func logEvent(_ identifier: String, dateFormat: DateFormatter, conte
     print("\(dateFormat.string(from: Date())): \(identifier) -> \(content)")
 }
 
-final fileprivate class DebugSink<Source: ObservableType, O: ObserverType> : Sink<O>, ObserverType where O.E == Source.E {
+final fileprivate class DebugSink<Source: ObservableType, O: ObserverType>: Sink<O>, ObserverType where O.E == Source.E {
     typealias Element = O.E
     typealias Parent = Debug<Source>
     
@@ -54,7 +54,7 @@ final fileprivate class DebugSink<Source: ObservableType, O: ObserverType> : Sin
 
         let eventNormalized = (eventText.count > maxEventTextLength) && _parent._trimOutput
             ? String(eventText.prefix(maxEventTextLength / 2)) + "..." + String(eventText.suffix(maxEventTextLength / 2))
-            : eventText
+           : eventText
 
         logEvent(_parent._identifier, dateFormat: _timestampFormatter, content: "Event \(eventNormalized)")
 
@@ -72,7 +72,7 @@ final fileprivate class DebugSink<Source: ObservableType, O: ObserverType> : Sin
     }
 }
 
-final fileprivate class Debug<Source: ObservableType> : Producer<Source.E> {
+final fileprivate class Debug<Source: ObservableType>: Producer<Source.E> {
     fileprivate let _identifier: String
     fileprivate let _trimOutput: Bool
     fileprivate let _source: Source

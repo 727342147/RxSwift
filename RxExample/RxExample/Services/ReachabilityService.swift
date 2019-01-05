@@ -35,7 +35,7 @@ enum ReachabilityServiceError: Error {
 }
 
 class DefaultReachabilityService
-    : ReachabilityService {
+   : ReachabilityService {
 
     private let _reachabilitySubject: BehaviorSubject<ReachabilityStatus>
 

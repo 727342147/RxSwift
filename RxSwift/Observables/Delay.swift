@@ -26,7 +26,7 @@ extension ObservableType {
 }
 
 final fileprivate class DelaySink<O: ObserverType>
-    : Sink<O>
+   : Sink<O>
     , ObserverType {
     typealias E = O.E
     typealias Source = Observable<E>
@@ -173,7 +173,7 @@ final fileprivate class Delay<Element>: Producer<Element> {
         _scheduler = scheduler
     }
 
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
         let sink = DelaySink(observer: observer, dueTime: _dueTime, scheduler: _scheduler, cancel: cancel)
         let subscription = sink.run(source: _source)
         return (sink: sink, subscription: subscription)

@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxTest
 
-class MaybeTest : RxTest {
+class MaybeTest: RxTest {
 
 }
 

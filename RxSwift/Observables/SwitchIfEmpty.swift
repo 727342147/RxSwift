@@ -30,7 +30,7 @@ final fileprivate class SwitchIfEmpty<Element>: Producer<Element> {
         _ifEmpty = ifEmpty
     }
     
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
         let sink = SwitchIfEmptySink(ifEmpty: _ifEmpty,
                                      observer: observer,
                                      cancel: cancel)
@@ -79,7 +79,7 @@ final fileprivate class SwitchIfEmptySink<O: ObserverType>: Sink<O>
 }
 
 final fileprivate class SwitchIfEmptySinkIter<O: ObserverType>
-    : ObserverType {
+   : ObserverType {
     typealias E = O.E
     typealias Parent = SwitchIfEmptySink<O>
     

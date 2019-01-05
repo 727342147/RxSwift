@@ -8,7 +8,7 @@
 
 import RxCocoa
 
-extension SharedSequence : Equatable {
+extension SharedSequence: Equatable {
 
 }
 

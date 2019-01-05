@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class GitHubSignupViewController2 : ViewController {
+class GitHubSignupViewController2: ViewController {
     @IBOutlet weak var usernameOutlet: UITextField!
     @IBOutlet weak var usernameValidationOutlet: UILabel!
     

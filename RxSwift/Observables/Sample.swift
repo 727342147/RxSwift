@@ -27,7 +27,7 @@ extension ObservableType {
 }
 
 final fileprivate class SamplerSink<O: ObserverType, SampleType>
-    : ObserverType
+   : ObserverType
     , LockOwnerType
     , SynchronizedOnType {
     typealias E = SampleType
@@ -77,7 +77,7 @@ final fileprivate class SamplerSink<O: ObserverType, SampleType>
 }
 
 final fileprivate class SampleSequenceSink<O: ObserverType, SampleType>
-    : Sink<O>
+   : Sink<O>
     , ObserverType
     , LockOwnerType
     , SynchronizedOnType {
@@ -125,7 +125,7 @@ final fileprivate class SampleSequenceSink<O: ObserverType, SampleType>
     
 }
 
-final fileprivate class Sample<Element, SampleType> : Producer<Element> {
+final fileprivate class Sample<Element, SampleType>: Producer<Element> {
     fileprivate let _source: Observable<Element>
     fileprivate let _sampler: Observable<SampleType>
 

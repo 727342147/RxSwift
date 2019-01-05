@@ -14,7 +14,7 @@ import RxSwift
 import RxCocoa
 
 open class RxTableViewSectionedAnimatedDataSource<S: AnimatableSectionModelType>
-    : TableViewSectionedDataSource<S>
+   : TableViewSectionedDataSource<S>
     , RxTableViewDataSourceType {
     
     public typealias Element = [S]

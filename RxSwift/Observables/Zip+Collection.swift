@@ -35,7 +35,7 @@ extension ObservableType {
 }
 
 final fileprivate class ZipCollectionTypeSink<C: Collection, O: ObserverType>
-    : Sink<O> where C.Iterator.Element : ObservableConvertibleType {
+   : Sink<O> where C.Iterator.Element: ObservableConvertibleType {
     typealias R = O.E
     typealias Parent = ZipCollectionType<C, R>
     typealias SourceElement = C.Iterator.Element.E
@@ -148,7 +148,7 @@ final fileprivate class ZipCollectionTypeSink<C: Collection, O: ObserverType>
     }
 }
 
-final fileprivate class ZipCollectionType<C: Collection, R> : Producer<R> where C.Iterator.Element : ObservableConvertibleType {
+final fileprivate class ZipCollectionType<C: Collection, R>: Producer<R> where C.Iterator.Element: ObservableConvertibleType {
     typealias ResultSelector = ([C.Iterator.Element.E]) throws -> R
     
     let sources: C
@@ -161,7 +161,7 @@ final fileprivate class ZipCollectionType<C: Collection, R> : Producer<R> where 
         self.count = Int(Int64(self.sources.count))
     }
     
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == R {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == R {
         let sink = ZipCollectionTypeSink(parent: self, observer: observer, cancel: cancel)
         let subscription = sink.run()
         return (sink: sink, subscription: subscription)

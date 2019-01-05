@@ -16,7 +16,7 @@ extension UIWebView: HasDelegate {
 }
 
 open class RxWebViewDelegateProxy
-    : DelegateProxy<UIWebView, UIWebViewDelegate>
+   : DelegateProxy<UIWebView, UIWebViewDelegate>
     , DelegateProxyType 
     , UIWebViewDelegate {
 

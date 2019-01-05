@@ -13,7 +13,7 @@ import RxSwift
 
 /// For more information take a look at `DelegateProxyType`.
 open class RxTableViewDelegateProxy
-    : RxScrollViewDelegateProxy
+   : RxScrollViewDelegateProxy
     , UITableViewDelegate {
 
     /// Typed parent object.

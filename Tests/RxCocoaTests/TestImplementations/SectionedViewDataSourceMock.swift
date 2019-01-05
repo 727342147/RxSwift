@@ -11,7 +11,7 @@ import RxCocoa
 import UIKit
 
 @objc final class SectionedViewDataSourceMock
-    : NSObject
+   : NSObject
     , SectionedViewDataSourceType
     , UITableViewDataSource
     , UICollectionViewDataSource

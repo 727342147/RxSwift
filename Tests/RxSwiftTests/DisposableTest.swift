@@ -18,7 +18,7 @@ import class Dispatch.DispatchSpecificKey
     import func Foundation.arc4random_uniform
 #endif
 
-class DisposableTest : RxTest {
+class DisposableTest: RxTest {
     override func setUp() {
         super.setUp()
     }

@@ -12,7 +12,7 @@ import RxCocoa
 import XCTest
 import RxTest
 
-class SharedSequenceTest : RxTest {
+class SharedSequenceTest: RxTest {
     var backgroundScheduler = SerialDispatchQueueScheduler(qos: .default)
 
     override func tearDown() {

@@ -77,7 +77,7 @@ extension Reactive where Base: UITableView {
              }
              .disposed(by: disposeBag)
     */
-    public func items<S: Sequence, Cell: UITableViewCell, O : ObservableType>
+    public func items<S: Sequence, Cell: UITableViewCell, O: ObservableType>
         (cellIdentifier: String, cellType: Cell.Type = Cell.self)
         -> (_ source: O)
         -> (_ configureCell: @escaping (Int, S.Iterator.Element, Cell) -> Void)

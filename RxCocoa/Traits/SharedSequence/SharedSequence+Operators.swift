@@ -42,7 +42,7 @@ extension SharedSequenceConvertibleType {
 }
 
 // MARK: switchLatest
-extension SharedSequenceConvertibleType where E : SharedSequenceConvertibleType {
+extension SharedSequenceConvertibleType where E: SharedSequenceConvertibleType {
     
     /**
     Transforms an observable sequence of observable sequences into an observable sequence
@@ -259,7 +259,7 @@ extension SharedSequenceConvertibleType {
 }
 
 // MARK: merge
-extension SharedSequenceConvertibleType where E : SharedSequenceConvertibleType {
+extension SharedSequenceConvertibleType where E: SharedSequenceConvertibleType {
     /**
     Merges elements from all observable sequences in the given enumerable sequence into a single observable sequence.
     

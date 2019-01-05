@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxTest
 
-class ObservableGroupByTest : RxTest {
+class ObservableGroupByTest: RxTest {
 }
 
 extension ObservableGroupByTest {

@@ -40,7 +40,7 @@ This is more or less how it works.
                   |                                                           
       +-----------v-------------------------------+                           
       |                                           |                           
-      | Delegate proxy : DelegateProxyType        +-----+---->  Observable<T1>
+      | Delegate proxy: DelegateProxyType        +-----+---->  Observable<T1>
       |                , UIScrollViewDelegate     |     |
       +-----------+-------------------------------+     +---->  Observable<T2>
                   |                                     |                     
@@ -58,11 +58,11 @@ This is more or less how it works.
 
 Since RxCocoa needs to automagically create those Proxys and because views that have delegates can be hierarchical
 
-     UITableView : UIScrollView : UIView
+     UITableView: UIScrollView: UIView
 
 .. and corresponding delegates are also hierarchical
 
-     UITableViewDelegate : UIScrollViewDelegate : NSObject
+     UITableViewDelegate: UIScrollViewDelegate: NSObject
 
 ... this mechanism can be extended by using the following snippet in `registerKnownImplementations` or in some other
      part of your app that executes before using `rx.*` (e.g. appDidFinishLaunching).

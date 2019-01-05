@@ -11,7 +11,7 @@ import RxCocoa
 import UIKit
 import XCTest
 
-final class UISearchBarTests : RxTest {
+final class UISearchBarTests: RxTest {
 }
 
 extension UISearchBarTests {

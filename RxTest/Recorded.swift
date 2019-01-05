@@ -11,7 +11,7 @@ import Swift
 
 /// Record of a value including the virtual time it was produced on.
 public struct Recorded<Value>
-    : CustomDebugStringConvertible {
+   : CustomDebugStringConvertible {
 
     /// Gets the virtual time the value was produced on.
     public let time: TestTime

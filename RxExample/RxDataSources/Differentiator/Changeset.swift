@@ -65,16 +65,16 @@ public struct Changeset<S: SectionModelType> {
 }
 
 extension ItemPath
-    : CustomDebugStringConvertible {
-    public var debugDescription : String {
+   : CustomDebugStringConvertible {
+    public var debugDescription: String {
         return "(\(sectionIndex), \(itemIndex))"
     }
 }
 
 extension Changeset
-    : CustomDebugStringConvertible {
+   : CustomDebugStringConvertible {
 
-    public var debugDescription : String {
+    public var debugDescription: String {
         let serializedSections = "[\n" + finalSections.map { "\($0)" }.joined(separator: ",\n") + "\n]\n"
         return " >> Final sections"
         + "   \n\(serializedSections)"

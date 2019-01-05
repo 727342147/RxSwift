@@ -19,7 +19,7 @@ public struct SectionModel<Section, ItemType> {
 }
 
 extension SectionModel
-    : SectionModelType {
+   : SectionModelType {
     public typealias Identity = Section
     public typealias Item = ItemType
     
@@ -29,7 +29,7 @@ extension SectionModel
 }
 
 extension SectionModel
-    : CustomStringConvertible {
+   : CustomStringConvertible {
 
     public var description: String {
         return "\(self.model) > \(items)"

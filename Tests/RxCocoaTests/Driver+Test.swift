@@ -12,7 +12,7 @@ import RxCocoa
 import XCTest
 import RxTest
 
-class DriverTest : SharedSequenceTest { }
+class DriverTest: SharedSequenceTest { }
 
 // MARK: properties
 extension DriverTest {

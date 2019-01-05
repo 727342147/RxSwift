@@ -9,7 +9,7 @@
 import RxSwift
 
 /// A protocol that extends `ControlEvent`.
-public protocol ControlEventType : ObservableType {
+public protocol ControlEventType: ObservableType {
 
     /// - returns: `ControlEvent` interface
     func asControlEvent() -> ControlEvent<E>
@@ -36,7 +36,7 @@ public protocol ControlEventType : ObservableType {
     **If the `events` observable sequence passed into thr initializer doesn’t satisfy all enumerated
      properties, don’t use this trait.**
 */
-public struct ControlEvent<PropertyType> : ControlEventType {
+public struct ControlEvent<PropertyType>: ControlEventType {
     public typealias E = PropertyType
 
     let _events: Observable<PropertyType>
@@ -53,7 +53,7 @@ public struct ControlEvent<PropertyType> : ControlEventType {
     ///
     /// - parameter observer: Observer to subscribe to events.
     /// - returns: Disposable object that can be used to unsubscribe the observer from receiving control events.
-    public func subscribe<O : ObserverType>(_ observer: O) -> Disposable where O.E == E {
+    public func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == E {
         return _events.subscribe(observer)
     }
 

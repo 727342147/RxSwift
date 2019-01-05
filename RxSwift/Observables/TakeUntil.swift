@@ -50,7 +50,7 @@ public enum TakeUntilBehavior {
 
 // MARK: - TakeUntil Observable
 final fileprivate class TakeUntilSinkOther<Other, O: ObserverType>
-    : ObserverType
+   : ObserverType
     , LockOwnerType
     , SynchronizedOnType {
     typealias Parent = TakeUntilSink<Other, O>
@@ -96,7 +96,7 @@ final fileprivate class TakeUntilSinkOther<Other, O: ObserverType>
 }
 
 final fileprivate class TakeUntilSink<Other, O: ObserverType>
-    : Sink<O>
+   : Sink<O>
     , LockOwnerType
     , ObserverType
     , SynchronizedOnType {
@@ -150,7 +150,7 @@ final fileprivate class TakeUntil<Element, Other>: Producer<Element> {
         _other = other
     }
     
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
         let sink = TakeUntilSink(parent: self, observer: observer, cancel: cancel)
         let subscription = sink.run()
         return (sink: sink, subscription: subscription)
@@ -159,7 +159,7 @@ final fileprivate class TakeUntil<Element, Other>: Producer<Element> {
 
 // MARK: - TakeUntil Predicate
 final fileprivate class TakeUntilPredicateSink<O: ObserverType>
-    : Sink<O>, ObserverType {
+   : Sink<O>, ObserverType {
     typealias Element = O.E
     typealias Parent = TakeUntilPredicate<Element>
 
@@ -219,7 +219,7 @@ final fileprivate class TakeUntilPredicate<Element>: Producer<Element> {
         _predicate = predicate
     }
 
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
         let sink = TakeUntilPredicateSink(parent: self, observer: observer, cancel: cancel)
         let subscription = _source.subscribe(sink)
         return (sink: sink, subscription: subscription)

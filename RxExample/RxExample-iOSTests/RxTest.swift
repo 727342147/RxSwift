@@ -8,7 +8,7 @@
 
 import XCTest
 
-class RxTest : XCTestCase {
+class RxTest: XCTestCase {
 
 }
 

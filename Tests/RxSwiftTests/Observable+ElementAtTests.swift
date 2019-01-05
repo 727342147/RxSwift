@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxTest
 
-class ObservableElementAtTest : RxTest {
+class ObservableElementAtTest: RxTest {
 }
 
 extension ObservableElementAtTest {

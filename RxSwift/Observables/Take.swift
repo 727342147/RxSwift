@@ -46,7 +46,7 @@ extension ObservableType {
 
 // count version
 
-final fileprivate class TakeCountSink<O: ObserverType> : Sink<O>, ObserverType {
+final fileprivate class TakeCountSink<O: ObserverType>: Sink<O>, ObserverType {
     typealias E = O.E
     typealias Parent = TakeCount<E>
     
@@ -97,7 +97,7 @@ final fileprivate class TakeCount<Element>: Producer<Element> {
         _count = count
     }
     
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
         let sink = TakeCountSink(parent: self, observer: observer, cancel: cancel)
         let subscription = _source.subscribe(sink)
         return (sink: sink, subscription: subscription)
@@ -107,7 +107,7 @@ final fileprivate class TakeCount<Element>: Producer<Element> {
 // time version
 
 final fileprivate class TakeTimeSink<ElementType, O: ObserverType>
-    : Sink<O>
+   : Sink<O>
     , LockOwnerType
     , ObserverType
     , SynchronizedOnType where O.E == ElementType {
@@ -159,7 +159,7 @@ final fileprivate class TakeTimeSink<ElementType, O: ObserverType>
     }
 }
 
-final fileprivate class TakeTime<Element> : Producer<Element> {
+final fileprivate class TakeTime<Element>: Producer<Element> {
     typealias TimeInterval = RxTimeInterval
     
     fileprivate let _source: Observable<Element>
@@ -172,7 +172,7 @@ final fileprivate class TakeTime<Element> : Producer<Element> {
         _duration = duration
     }
     
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
         let sink = TakeTimeSink(parent: self, observer: observer, cancel: cancel)
         let subscription = sink.run()
         return (sink: sink, subscription: subscription)

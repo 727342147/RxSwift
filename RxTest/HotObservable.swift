@@ -14,7 +14,7 @@ import RxSwift
 ///
 /// Event times represent absolute `TestScheduler` time.
 final class HotObservable<Element>
-    : TestableObservable<Element> {
+   : TestableObservable<Element> {
 
     typealias Observer = (Event<Element>) -> ()
     typealias Observers = Bag<Observer>
@@ -37,7 +37,7 @@ final class HotObservable<Element>
     }
 
     /// Subscribes `observer` to receive events for this sequence.
-    override func subscribe<O : ObserverType>(_ observer: O) -> Disposable where O.E == Element {
+    override func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == Element {
         let key = _observers.insert(observer.on)
         subscriptions.append(Subscription(self.testScheduler.clock))
         

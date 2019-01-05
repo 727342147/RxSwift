@@ -35,7 +35,7 @@ extension ObservableType {
 }
 
 final fileprivate class WithLatestFromSink<FirstType, SecondType, O: ObserverType>
-    : Sink<O>
+   : Sink<O>
     , ObserverType
     , LockOwnerType
     , SynchronizedOnType {
@@ -91,7 +91,7 @@ final fileprivate class WithLatestFromSink<FirstType, SecondType, O: ObserverTyp
 }
 
 final fileprivate class WithLatestFromSecond<FirstType, SecondType, O: ObserverType>
-    : ObserverType
+   : ObserverType
     , LockOwnerType
     , SynchronizedOnType {
     
@@ -141,7 +141,7 @@ final fileprivate class WithLatestFrom<FirstType, SecondType, ResultType>: Produ
         _resultSelector = resultSelector
     }
     
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == ResultType {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == ResultType {
         let sink = WithLatestFromSink(parent: self, observer: observer, cancel: cancel)
         let subscription = sink.run()
         return (sink: sink, subscription: subscription)

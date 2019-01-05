@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxTest
 
-class ObservableShareReplayScopeTests : RxTest {
+class ObservableShareReplayScopeTests: RxTest {
 }
 
 extension ObservableShareReplayScopeTests {

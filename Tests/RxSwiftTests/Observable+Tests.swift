@@ -11,7 +11,7 @@ import RxCocoa
 import RxTest
 import XCTest
 
-class ObservableTest : RxTest {
+class ObservableTest: RxTest {
     
 }
 
@@ -166,7 +166,7 @@ extension ObservableTest {
     func testAsObservable_never() {
         let scheduler = TestScheduler(initialClock: 0)
 
-        let xs : Observable<Int> = Observable.never()
+        let xs: Observable<Int> = Observable.never()
 
         let res = scheduler.start { xs }
 

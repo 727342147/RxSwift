@@ -15,7 +15,7 @@ import XCTest
 
 import struct Foundation.Date
 
-class SharingSchedulerTest : RxTest {
+class SharingSchedulerTest: RxTest {
 
 }
 
@@ -48,7 +48,7 @@ extension SharingSchedulerTest {
 }
 
 class Scheduler1: SchedulerType {
-    var now : RxTime {
+    var now: RxTime {
         fatalError()
     }
 
@@ -66,7 +66,7 @@ class Scheduler1: SchedulerType {
 }
 
 class Scheduler2: SchedulerType {
-    var now : RxTime {
+    var now: RxTime {
         fatalError()
     }
 

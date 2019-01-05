@@ -20,7 +20,7 @@ import UIKit
 }
 
 @objc class MockTestDelegateProtocol
-    : NSObject
+   : NSObject
     , TestDelegateProtocol
 {
     var numbers = [Int]()
@@ -57,7 +57,7 @@ extension TestDelegateControl {
 
 // MARK: Tests
 
-final class DelegateProxyTest : RxTest {
+final class DelegateProxyTest: RxTest {
     func test_OnInstallDelegateIsRetained() {
         let view = ThreeDSectionedView()
         let mock = MockThreeDSectionedViewProtocol()
@@ -518,7 +518,7 @@ extension Reactive where Base: ThreeDSectionedView {
 
 // }
 
-final class MockThreeDSectionedViewProtocol : NSObject, ThreeDSectionedViewProtocol {
+final class MockThreeDSectionedViewProtocol: NSObject, ThreeDSectionedViewProtocol {
     
     var messages: [String] = []
     var invoked: (() -> ())!
@@ -571,7 +571,7 @@ class InitialClassViewSubclass: InitialClassView {
 }
 
 class InitialClassViewDelegateProxy
-    : DelegateProxy<InitialClassView, InitialClassViewDelegate>
+   : DelegateProxy<InitialClassView, InitialClassViewDelegate>
     , DelegateProxyType
     , InitialClassViewDelegate {
 
@@ -662,7 +662,7 @@ extension Reactive where Base: PureSwiftView {
 }
 
 class PureSwiftDelegateProxy
-    : DelegateProxy<PureSwiftView, PureSwiftDelegate>
+   : DelegateProxy<PureSwiftView, PureSwiftDelegate>
     , DelegateProxyType
     , PureSwiftDelegate {
 
@@ -706,7 +706,7 @@ final class MockPureSwiftDelegate: PureSwiftDelegate {
 
 #if os(macOS)
 extension MockTestDelegateProtocol
-    : NSTextFieldDelegate {
+   : NSTextFieldDelegate {
 
     }
 #endif
@@ -725,7 +725,7 @@ extension MockTestDelegateProtocol: UIPickerViewDataSource {
 
 #if os(iOS) || os(tvOS)
 extension MockTestDelegateProtocol
-    : UICollectionViewDataSource
+   : UICollectionViewDataSource
     , UICollectionViewDataSourcePrefetching
     , UIScrollViewDelegate
     , UITableViewDataSource
@@ -766,7 +766,7 @@ extension MockTestDelegateProtocol
 
 #if os(iOS)
 extension MockTestDelegateProtocol
-    : UIPickerViewDelegate
+   : UIPickerViewDelegate
     , UIWebViewDelegate
 {
 }

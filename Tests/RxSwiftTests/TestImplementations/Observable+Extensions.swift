@@ -13,7 +13,7 @@ public func == <T>(lhs: Observable<T>, rhs: Observable<T>) -> Bool {
     return lhs === rhs
 }
 
-extension TestableObservable : Equatable {
+extension TestableObservable: Equatable {
 
 }
 

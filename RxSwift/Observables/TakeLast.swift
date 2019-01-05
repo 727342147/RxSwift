@@ -24,7 +24,7 @@ extension ObservableType {
     }
 }
 
-final fileprivate class TakeLastSink<O: ObserverType> : Sink<O>, ObserverType {
+final fileprivate class TakeLastSink<O: ObserverType>: Sink<O>, ObserverType {
     typealias E = O.E
     typealias Parent = TakeLast<E>
     
@@ -70,7 +70,7 @@ final fileprivate class TakeLast<Element>: Producer<Element> {
         _count = count
     }
     
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
         let sink = TakeLastSink(parent: self, observer: observer, cancel: cancel)
         let subscription = _source.subscribe(sink)
         return (sink: sink, subscription: subscription)

@@ -14,7 +14,7 @@ import RxSwift
 import RxCocoa
 
 open class RxCollectionViewSectionedReloadDataSource<S: SectionModelType>
-    : CollectionViewSectionedDataSource<S>
+   : CollectionViewSectionedDataSource<S>
     , RxCollectionViewDataSourceType {
     
     public typealias Element = [S]

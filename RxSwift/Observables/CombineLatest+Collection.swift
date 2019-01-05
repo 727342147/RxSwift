@@ -34,7 +34,7 @@ extension ObservableType {
 }
 
 final fileprivate class CombineLatestCollectionTypeSink<C: Collection, O: ObserverType>
-    : Sink<O> where C.Iterator.Element : ObservableConvertibleType {
+   : Sink<O> where C.Iterator.Element: ObservableConvertibleType {
     typealias R = O.E
     typealias Parent = CombineLatestCollectionType<C, R>
     typealias SourceElement = C.Iterator.Element.E
@@ -136,7 +136,7 @@ final fileprivate class CombineLatestCollectionTypeSink<C: Collection, O: Observ
     }
 }
 
-final fileprivate class CombineLatestCollectionType<C: Collection, R> : Producer<R> where C.Iterator.Element : ObservableConvertibleType {
+final fileprivate class CombineLatestCollectionType<C: Collection, R>: Producer<R> where C.Iterator.Element: ObservableConvertibleType {
     typealias ResultSelector = ([C.Iterator.Element.E]) throws -> R
     
     let _sources: C
@@ -149,7 +149,7 @@ final fileprivate class CombineLatestCollectionType<C: Collection, R> : Producer
         _count = Int(Int64(self._sources.count))
     }
     
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == R {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == R {
         let sink = CombineLatestCollectionTypeSink(parent: self, observer: observer, cancel: cancel)
         let subscription = sink.run()
         return (sink: sink, subscription: subscription)

@@ -6,7 +6,7 @@
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
-struct ElementIndexPair<E: Equatable, I: Equatable> : Equatable {
+struct ElementIndexPair<E: Equatable, I: Equatable>: Equatable {
     let element: E
     let index: I
     

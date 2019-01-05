@@ -9,7 +9,7 @@
 /// A type-erased `ObserverType`.
 ///
 /// Forwards operations to an arbitrary underlying observer with the same `Element` type, hiding the specifics of the underlying observer type.
-public struct AnyObserver<Element> : ObserverType {
+public struct AnyObserver<Element>: ObserverType {
     /// The type of elements in sequence that observer can observe.
     public typealias E = Element
     
@@ -28,7 +28,7 @@ public struct AnyObserver<Element> : ObserverType {
     /// Construct an instance whose `on(event)` calls `observer.on(event)`
     ///
     /// - parameter observer: Observer that receives sequence events.
-    public init<O : ObserverType>(_ observer: O) where O.E == Element {
+    public init<O: ObserverType>(_ observer: O) where O.E == Element {
         self.observer = observer.on
     }
     

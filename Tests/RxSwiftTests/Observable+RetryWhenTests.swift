@@ -12,10 +12,10 @@ import RxTest
 
 import class Foundation.NSError
 
-class ObservableRetryWhenTest : RxTest {
+class ObservableRetryWhenTest: RxTest {
 }
 
-struct CustomErrorType : Error {
+struct CustomErrorType: Error {
 
 }
 

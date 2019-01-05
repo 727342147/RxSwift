@@ -16,7 +16,7 @@
     }
 
     open class RxTextStorageDelegateProxy
-        : DelegateProxy<NSTextStorage, NSTextStorageDelegate>
+       : DelegateProxy<NSTextStorage, NSTextStorageDelegate>
         , DelegateProxyType 
         , NSTextStorageDelegate {
 

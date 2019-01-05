@@ -10,7 +10,7 @@ import RxSwift
 
 /// Observable sequence that records subscription lifetimes and timestamped events sent to observers.
 public class TestableObservable<Element>
-    : ObservableType {
+   : ObservableType {
     public typealias E = Element
     /// Subscriptions recorded during observable lifetime.
     public internal(set) var subscriptions: [Subscription]
@@ -29,7 +29,7 @@ public class TestableObservable<Element>
         self.subscriptions = []
     }
 
-    public func subscribe<O : ObserverType>(_ observer: O) -> Disposable where O.E == Element {
+    public func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == Element {
         fatalError("Abstract method")
     }
 }

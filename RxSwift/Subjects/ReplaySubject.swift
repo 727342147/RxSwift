@@ -10,7 +10,7 @@
 ///
 /// Each notification is broadcasted to all subscribed and future observers, subject to buffer trimming policies.
 public class ReplaySubject<Element>
-    : Observable<Element>
+   : Observable<Element>
     , SubjectType
     , ObserverType
     , Disposable {
@@ -99,7 +99,7 @@ public class ReplaySubject<Element>
 }
 
 fileprivate class ReplayBufferBase<Element>
-    : ReplaySubject<Element>
+   : ReplaySubject<Element>
     , SynchronizedUnsubscribeType {
     
     func trim() {
@@ -146,14 +146,14 @@ fileprivate class ReplayBufferBase<Element>
         }
     }
     
-    override func subscribe<O : ObserverType>(_ observer: O) -> Disposable where O.E == Element {
+    override func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == Element {
         _lock.lock()
         let subscription = _synchronized_subscribe(observer)
         _lock.unlock()
         return subscription
     }
 
-    func _synchronized_subscribe<O : ObserverType>(_ observer: O) -> Disposable where O.E == E {
+    func _synchronized_subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == E {
         if _isDisposed {
             observer.on(.error(RxError.disposed(object: self)))
             return Disposables.create()
@@ -204,7 +204,7 @@ fileprivate class ReplayBufferBase<Element>
     }
 }
 
-fileprivate final class ReplayOne<Element> : ReplayBufferBase<Element> {
+fileprivate final class ReplayOne<Element>: ReplayBufferBase<Element> {
     private var _value: Element?
     
     override init() {
@@ -231,7 +231,7 @@ fileprivate final class ReplayOne<Element> : ReplayBufferBase<Element> {
     }
 }
 
-fileprivate class ReplayManyBase<Element> : ReplayBufferBase<Element> {
+fileprivate class ReplayManyBase<Element>: ReplayBufferBase<Element> {
     fileprivate var _queue: Queue<Element>
     
     init(queueSize: Int) {
@@ -254,7 +254,7 @@ fileprivate class ReplayManyBase<Element> : ReplayBufferBase<Element> {
     }
 }
 
-fileprivate final class ReplayMany<Element> : ReplayManyBase<Element> {
+fileprivate final class ReplayMany<Element>: ReplayManyBase<Element> {
     private let _bufferSize: Int
     
     init(bufferSize: Int) {
@@ -270,7 +270,7 @@ fileprivate final class ReplayMany<Element> : ReplayManyBase<Element> {
     }
 }
 
-fileprivate final class ReplayAll<Element> : ReplayManyBase<Element> {
+fileprivate final class ReplayAll<Element>: ReplayManyBase<Element> {
     init() {
         super.init(queueSize: 0)
     }

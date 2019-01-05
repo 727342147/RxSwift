@@ -11,7 +11,7 @@ import RxCocoa
 import Cocoa
 import XCTest
 
-final class NSControlTests : RxTest {
+final class NSControlTests: RxTest {
 }
 
 extension NSControlTests {

@@ -17,7 +17,7 @@ import class Foundation.NSCondition
 import class Foundation.OperationQueue
 import class Foundation.Thread
 
-class ObservableObserveOnTestBase : RxTest {
+class ObservableObserveOnTestBase: RxTest {
     var lock = NSLock()
 
     func performLocked(_ action: () -> Void) {
@@ -31,7 +31,7 @@ class ObservableObserveOnTestBase : RxTest {
     }
 }
 
-class ObservableObserveOnTest : ObservableObserveOnTestBase {
+class ObservableObserveOnTest: ObservableObserveOnTestBase {
 }
 
 // observeOn serial scheduler
@@ -692,7 +692,7 @@ class ObservableObserveOnTestConcurrentSchedulerTest: ObservableObserveOnTestBas
     #endif
 }
 
-final class ObservableObserveOnTestConcurrentSchedulerTest2 : ObservableObserveOnTestConcurrentSchedulerTest {
+final class ObservableObserveOnTestConcurrentSchedulerTest2: ObservableObserveOnTestConcurrentSchedulerTest {
     override func createScheduler() -> ImmediateSchedulerType {
         return ConcurrentDispatchQueueScheduler(qos: .default)
     }

@@ -7,7 +7,7 @@
 //
 
 struct ScheduledItem<T>
-    : ScheduledItemType
+   : ScheduledItemType
     , InvocableType {
     typealias Action = (T) -> Disposable
     

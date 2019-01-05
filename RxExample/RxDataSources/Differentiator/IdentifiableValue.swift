@@ -13,17 +13,17 @@ public struct IdentifiableValue<Value: Hashable> {
 }
 
 extension IdentifiableValue
-    : IdentifiableType {
+   : IdentifiableType {
 
     public typealias Identity = Value
 
-    public var identity : Identity {
+    public var identity: Identity {
         return value
     }
 }
 
 extension IdentifiableValue
-    : Equatable
+   : Equatable
     , CustomStringConvertible
     , CustomDebugStringConvertible {
 

@@ -8,11 +8,11 @@
 
 import RxSwift
 
-final class MySubject<Element> : SubjectType, ObserverType where Element : Hashable {
+final class MySubject<Element>: SubjectType, ObserverType where Element: Hashable {
     typealias E = Element
     typealias SubjectObserverType = MySubject<E>
 
-    var _disposeOn: [Element : Disposable] = [:]
+    var _disposeOn: [Element: Disposable] = [:]
     var _observer: AnyObserver<Element>! = nil
     var _subscribeCount: Int = 0
     var _isDisposed: Bool = false
@@ -40,7 +40,7 @@ final class MySubject<Element> : SubjectType, ObserverType where Element : Hasha
         }
     }
     
-    func subscribe<O : ObserverType>(_ observer: O) -> Disposable where O.E == E {
+    func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == E {
         _subscribeCount += 1
         _observer = AnyObserver(observer)
         

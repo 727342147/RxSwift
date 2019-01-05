@@ -16,14 +16,14 @@ import RxCocoa
     import Cocoa
 #endif
 
-final class KVOObservableTests : RxTest {
+final class KVOObservableTests: RxTest {
 }
 
-final class TestClass : NSObject {
+final class TestClass: NSObject {
     @objc dynamic var pr: String? = "0"
 }
 
-final class Parent : NSObject {
+final class Parent: NSObject {
     var disposeBag: DisposeBag! = DisposeBag()
 
     @objc dynamic var val: String = ""
@@ -41,7 +41,7 @@ final class Parent : NSObject {
     }
 }
 
-final class Child : NSObject {
+final class Child: NSObject {
     let disposeBag = DisposeBag()
     
     init(parent: ParentWithChild, callback: @escaping (String?) -> Void) {
@@ -56,7 +56,7 @@ final class Child : NSObject {
     }
 }
 
-final class ParentWithChild : NSObject {
+final class ParentWithChild: NSObject {
     @objc dynamic var val: String = ""
     
     var child: Child? = nil
@@ -98,7 +98,7 @@ final class ParentWithChild : NSObject {
     case two
 }
 
-final class HasStrongProperty : NSObject {
+final class HasStrongProperty: NSObject {
     @objc dynamic var property: NSObject? = nil
     @objc dynamic var frame: CGRect
     @objc dynamic var point: CGPoint
@@ -124,7 +124,7 @@ final class HasStrongProperty : NSObject {
     }
 }
 
-final class HasWeakProperty : NSObject {
+final class HasWeakProperty: NSObject {
     @objc dynamic weak var property: NSObject? = nil
     
     override init() {

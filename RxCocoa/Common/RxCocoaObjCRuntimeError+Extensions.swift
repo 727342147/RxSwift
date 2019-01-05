@@ -20,9 +20,8 @@
     }
 
     /// RxCocoa ObjC runtime modification errors.
-    public enum RxCocoaObjCRuntimeError
-        : Swift.Error
-        , CustomDebugStringConvertible {
+    public enum RxCocoaObjCRuntimeError: Swift.Error,
+                                         CustomDebugStringConvertible {
         /// Unknown error has occurred.
         case unknown(target: AnyObject)
 

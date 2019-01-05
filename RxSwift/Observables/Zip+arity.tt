@@ -47,7 +47,7 @@ extension ObservableType where E == Any {
     }
 }
 
-final class ZipSink<%= i %>_<<%= (Array(1...i).map { "E\($0)" }).joined(separator: ", ") %>, O: ObserverType> : ZipSink<O> {
+final class ZipSink<%= i %>_<<%= (Array(1...i).map { "E\($0)" }).joined(separator: ", ") %>, O: ObserverType>: ZipSink<O> {
     typealias R = O.E
     typealias Parent = Zip<%= i %><<%= (Array(1...i).map { "E\($0)" }).joined(separator: ", ") %>, R>
 
@@ -97,7 +97,7 @@ final class ZipSink<%= i %>_<<%= (Array(1...i).map { "E\($0)" }).joined(separato
     }
 }
 
-final class Zip<%= i %><<%= (Array(1...i).map { "E\($0)" }).joined(separator: ", ") %>, R> : Producer<R> {
+final class Zip<%= i %><<%= (Array(1...i).map { "E\($0)" }).joined(separator: ", ") %>, R>: Producer<R> {
     typealias ResultSelector = (<%= (Array(1...i).map { "E\($0)" }).joined(separator: ", ") %>) throws -> R
 
 <%= (Array(1...i).map { "    let source\($0): Observable<E\($0)>" }).joined(separator: "\n") %>

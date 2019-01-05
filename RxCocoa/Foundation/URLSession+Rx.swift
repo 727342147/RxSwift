@@ -28,7 +28,7 @@ import RxSwift
 
 /// RxCocoa URL errors.
 public enum RxCocoaURLError
-    : Swift.Error {
+   : Swift.Error {
     /// Unknown error occurred.
     case unknown
     /// Response is not NSHTTPURLResponse
@@ -40,7 +40,7 @@ public enum RxCocoaURLError
 }
 
 extension RxCocoaURLError
-    : CustomDebugStringConvertible {
+   : CustomDebugStringConvertible {
     /// A textual representation of `self`, suitable for debugging.
     public var debugDescription: String {
         switch self {

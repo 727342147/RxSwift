@@ -8,7 +8,7 @@
 
 // MARK: Equatable
 
-extension ValidationResult : Equatable {
+extension ValidationResult: Equatable {
 
 }
 

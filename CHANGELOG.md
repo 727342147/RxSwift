@@ -657,10 +657,10 @@ any observers or `forwardToDelegate` wasn't implementing `UITableViewDataSource.
 This is example of those changes:
 
 ```swift
-- public func rx_itemsWithCellFactory<S : Sequence, O : ObservableType where O.E == S>
+- public func rx_itemsWithCellFactory<S: Sequence, O: ObservableType where O.E == S>
       (source: O)
       (cellFactory: (UITableView, Int, S.Iterator.Element) -> UITableViewCell) -> Disposable
-+ public func rx_itemsWithCellFactory<S : Sequence, O : ObservableType where O.E == S>
++ public func rx_itemsWithCellFactory<S: Sequence, O: ObservableType where O.E == S>
       (source: O)
       -> (cellFactory: (UITableView, Int, S.Iterator.Element) -> UITableViewCell) -> Disposable
 ```
@@ -894,7 +894,7 @@ let (
 * Exposes `RxScrollViewDelegateProxy`.
 * Exposes `RxTableViewDataSourceProxy`.
 * Exposes `RxTableViewDelegateProxy`.
-* Deprecates `proxyForObject` in favor of `proxyForObject<P : DelegateProxyType>(type: P.Type, _ object: AnyObject) -> P`.
+* Deprecates `proxyForObject` in favor of `proxyForObject<P: DelegateProxyType>(type: P.Type, _ object: AnyObject) -> P`.
 * Deprecates `rx_modelSelected<T>()` in favor of `rx_modelSelected<T>(modelType: T.Type)`.
 * Adds `func bindTo(variable: Variable<E>) -> Disposable` extension to `ObservableType`.
 * Exposes `ControlEvent` init.
@@ -979,7 +979,7 @@ let (
 * Adds new interface `ObservableConvertibleType`.
 * Adds `BlockingObservable` to `RxBlocking` and makes it more consistent with `RxJava`.
 * Renames `func subscribe(next:error:completed:disposed:)` to `func subscribe(onNext:onError:onCompleted:onDisposed:)`
-* Adds concat convenience method `public func concat<O : ObservableConvertibleType where O.E == E>(second: O) -> RxSwift.Observable<Self.E>`
+* Adds concat convenience method `public func concat<O: ObservableConvertibleType where O.E == E>(second: O) -> RxSwift.Observable<Self.E>`
 * Adds `skipUntil` operator.
 * Adds `takeWhile` operator.
 * Renames `takeWhile` indexed version to `takeWhileWithIndex`

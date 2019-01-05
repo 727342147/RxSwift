@@ -12,7 +12,7 @@ import RxCocoa
 import XCTest
 
 // UITextField
-final class UITextFieldTests : RxTest {
+final class UITextFieldTests: RxTest {
     
     func test_completesOnDealloc() {
         // because of leak in iOS 11.2
@@ -56,7 +56,7 @@ private extension String {
     }
 }
 
-final class UITextFieldSubclass : UITextField {
+final class UITextFieldSubclass: UITextField {
     var didSetText = false
     
     override var text: String? {

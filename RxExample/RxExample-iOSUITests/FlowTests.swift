@@ -8,7 +8,7 @@
 
 import XCTest
 
-class FlowTests : XCTestCase {
+class FlowTests: XCTestCase {
     var app: XCUIApplication!
     override func setUp() {
         super.setUp()

@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxTest
 
-class DisposeBagTest : RxTest {
+class DisposeBagTest: RxTest {
     override func setUp() {
         super.setUp()
     }

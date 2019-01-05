@@ -12,7 +12,7 @@ import XCTest
 import CoreLocation
 import RxExample_iOS
 
-class CLLocationManagerTests : RxTest {
+class CLLocationManagerTests: RxTest {
 
 }
 

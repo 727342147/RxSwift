@@ -22,7 +22,7 @@ extension DelegateProxyTest {
 // MARK: Mocks
 
 class ExtendNSTextFieldDelegateProxy
-    : RxTextFieldDelegateProxy
+   : RxTextFieldDelegateProxy
     , TestDelegateProtocol {
     init(textFieldSubclass: NSTextFieldSubclass) {
         super.init(textField: textFieldSubclass)
@@ -30,7 +30,7 @@ class ExtendNSTextFieldDelegateProxy
 }
 
 final class NSTextFieldSubclass
-    : NSTextField
+   : NSTextField
     , TestDelegateControl {
     func doThatTest(_ value: Int) {
         (delegate as! TestDelegateProtocol).testEventHappened?(value)

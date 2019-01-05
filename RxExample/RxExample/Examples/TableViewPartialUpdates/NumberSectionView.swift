@@ -8,6 +8,6 @@
 
 import UIKit
 
-class NumberSectionView : UICollectionReusableView {
+class NumberSectionView: UICollectionReusableView {
    @IBOutlet weak var value: UILabel?
 }

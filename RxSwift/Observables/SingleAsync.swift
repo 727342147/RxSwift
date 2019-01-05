@@ -36,7 +36,7 @@ extension ObservableType {
     }
 }
 
-fileprivate final class SingleAsyncSink<O: ObserverType> : Sink<O>, ObserverType {
+fileprivate final class SingleAsyncSink<O: ObserverType>: Sink<O>, ObserverType {
     typealias ElementType = O.E
     typealias Parent = SingleAsync<ElementType>
     typealias E = ElementType
@@ -97,7 +97,7 @@ final class SingleAsync<Element>: Producer<Element> {
         _predicate = predicate
     }
     
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
         let sink = SingleAsyncSink(parent: self, observer: observer, cancel: cancel)
         let subscription = _source.subscribe(sink)
         return (sink: sink, subscription: subscription)

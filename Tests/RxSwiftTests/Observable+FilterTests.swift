@@ -14,7 +14,7 @@ import RxTest
     import Glibc
 #endif
 
-class ObservableFilterTest : RxTest {
+class ObservableFilterTest: RxTest {
 }
 
 func isPrime(_ i: Int) -> Bool {

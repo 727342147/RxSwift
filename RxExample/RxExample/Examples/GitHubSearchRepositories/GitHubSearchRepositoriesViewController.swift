@@ -45,7 +45,7 @@ class GitHubSearchRepositoriesViewController: ViewController, UITableViewDelegat
                 .flatMap { state in
                     return tableView.isNearBottomEdge(edgeOffset: 20.0) && !state.shouldLoadNextPage
                         ? Signal.just(())
-                        : Signal.empty()
+                       : Signal.empty()
                 }
         }
 

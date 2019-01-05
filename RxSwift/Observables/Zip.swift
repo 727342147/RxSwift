@@ -6,14 +6,14 @@
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
-protocol ZipSinkProtocol : class
+protocol ZipSinkProtocol: class
 {
     func next(_ index: Int)
     func fail(_ error: Swift.Error)
     func done(_ index: Int)
 }
 
-class ZipSink<O: ObserverType> : Sink<O>, ZipSinkProtocol {
+class ZipSink<O: ObserverType>: Sink<O>, ZipSinkProtocol {
     typealias Element = O.E
     
     let _arity: Int
@@ -101,7 +101,7 @@ class ZipSink<O: ObserverType> : Sink<O>, ZipSinkProtocol {
 }
 
 final class ZipObserver<ElementType>
-    : ObserverType
+   : ObserverType
     , LockOwnerType
     , SynchronizedOnType {
     typealias E = ElementType

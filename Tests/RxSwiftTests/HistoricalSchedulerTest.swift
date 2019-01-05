@@ -10,7 +10,7 @@ import RxSwift
 import XCTest
 import struct Foundation.Date
 
-class HistoricalSchedulerTest : RxTest {
+class HistoricalSchedulerTest: RxTest {
 
 }
 

@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxTest
 
-class ObservableDistinctUntilChangedTest : RxTest {
+class ObservableDistinctUntilChangedTest: RxTest {
 }
 
 extension ObservableDistinctUntilChangedTest {

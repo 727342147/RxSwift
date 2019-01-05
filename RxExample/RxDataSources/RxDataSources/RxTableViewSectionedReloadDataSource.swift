@@ -14,7 +14,7 @@ import RxSwift
 import RxCocoa
 
 open class RxTableViewSectionedReloadDataSource<S: SectionModelType>
-    : TableViewSectionedDataSource<S>
+   : TableViewSectionedDataSource<S>
     , RxTableViewDataSourceType {
     public typealias Element = [S]
 

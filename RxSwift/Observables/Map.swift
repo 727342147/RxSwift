@@ -23,7 +23,7 @@ extension ObservableType {
     }
 }
 
-final fileprivate class MapSink<SourceType, O : ObserverType> : Sink<O>, ObserverType {
+final fileprivate class MapSink<SourceType, O: ObserverType>: Sink<O>, ObserverType {
     typealias Transform = (SourceType) throws -> ResultType
 
     typealias ResultType = O.E

@@ -24,7 +24,7 @@ extension ObservableType {
 }
 
 final fileprivate class DebounceSink<O: ObserverType>
-    : Sink<O>
+   : Sink<O>
     , ObserverType
     , LockOwnerType
     , SynchronizedOnType {
@@ -98,7 +98,7 @@ final fileprivate class DebounceSink<O: ObserverType>
     }
 }
 
-final fileprivate class Debounce<Element> : Producer<Element> {
+final fileprivate class Debounce<Element>: Producer<Element> {
 
     fileprivate let _source: Observable<Element>
     fileprivate let _dueTime: RxTimeInterval

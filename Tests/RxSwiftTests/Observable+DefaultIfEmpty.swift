@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxTest
 
-class ObservableDefaultIfEmptyTest : RxTest {
+class ObservableDefaultIfEmptyTest: RxTest {
 }
 
 extension ObservableDefaultIfEmptyTest {

@@ -23,7 +23,7 @@ extension ObservableType {
 }
 
 final fileprivate class SkipUntilSinkOther<Other, O: ObserverType>
-    : ObserverType
+   : ObserverType
     , LockOwnerType
     , SynchronizedOnType {
     typealias Parent = SkipUntilSink<Other, O>
@@ -71,7 +71,7 @@ final fileprivate class SkipUntilSinkOther<Other, O: ObserverType>
 
 
 final fileprivate class SkipUntilSink<Other, O: ObserverType>
-    : Sink<O>
+   : Sink<O>
     , ObserverType
     , LockOwnerType
     , SynchronizedOnType {
@@ -131,7 +131,7 @@ final fileprivate class SkipUntil<Element, Other>: Producer<Element> {
         _other = other
     }
     
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
         let sink = SkipUntilSink(parent: self, observer: observer, cancel: cancel)
         let subscription = sink.run()
         return (sink: sink, subscription: subscription)

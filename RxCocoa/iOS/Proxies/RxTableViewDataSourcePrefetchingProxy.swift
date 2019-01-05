@@ -21,7 +21,7 @@ fileprivate let tableViewPrefetchDataSourceNotSet = TableViewPrefetchDataSourceN
 
 @available(iOS 10.0, tvOS 10.0, *)
 fileprivate final class TableViewPrefetchDataSourceNotSet
-    : NSObject
+   : NSObject
     , UITableViewDataSourcePrefetching {
 
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {}
@@ -30,7 +30,7 @@ fileprivate final class TableViewPrefetchDataSourceNotSet
 
 @available(iOS 10.0, tvOS 10.0, *)
 open class RxTableViewDataSourcePrefetchingProxy
-    : DelegateProxy<UITableView, UITableViewDataSourcePrefetching>
+   : DelegateProxy<UITableView, UITableViewDataSourcePrefetching>
     , DelegateProxyType
     , UITableViewDataSourcePrefetching {
 

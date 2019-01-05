@@ -20,7 +20,7 @@ extension Reactive where Base: UINavigationController {
         return Binder(base) { navigationController, isOffline in
             navigationController.navigationBar.barTintColor = isOffline
                 ? Colors.offlineColor
-                : Colors.onlineColor
+               : Colors.onlineColor
         }
     }
 }

@@ -26,7 +26,7 @@ import XCTest
     #endif
 #endif
 
-final class NSLayoutConstraintTest : RxTest {
+final class NSLayoutConstraintTest: RxTest {
 }
 
 

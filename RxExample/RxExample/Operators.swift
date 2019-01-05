@@ -16,7 +16,7 @@ import AppKit
 
 // Two way binding operator between control property and relay, that's all it takes.
 
-infix operator <-> : DefaultPrecedence
+infix operator <->: DefaultPrecedence
 
 #if os(iOS)
 func nonMarkedText(_ textInput: UITextInput) -> String? {

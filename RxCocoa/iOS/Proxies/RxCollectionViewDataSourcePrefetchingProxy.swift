@@ -21,7 +21,7 @@ fileprivate let collectionViewPrefetchDataSourceNotSet = CollectionViewPrefetchD
 
 @available(iOS 10.0, tvOS 10.0, *)
 fileprivate final class CollectionViewPrefetchDataSourceNotSet
-    : NSObject
+   : NSObject
     , UICollectionViewDataSourcePrefetching {
 
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {}
@@ -30,7 +30,7 @@ fileprivate final class CollectionViewPrefetchDataSourceNotSet
 
 @available(iOS 10.0, tvOS 10.0, *)
 open class RxCollectionViewDataSourcePrefetchingProxy
-    : DelegateProxy<UICollectionView, UICollectionViewDataSourcePrefetching>
+   : DelegateProxy<UICollectionView, UICollectionViewDataSourcePrefetching>
     , DelegateProxyType
     , UICollectionViewDataSourcePrefetching {
 

@@ -10,7 +10,7 @@
 ///
 /// If this can be done simpler, PRs are welcome :)
 struct AnyEquatable<Target>
-    : Equatable {
+   : Equatable {
     typealias Comparer = (Target, Target) -> Bool
 
     let _target: Target
@@ -27,7 +27,7 @@ func == <T>(lhs: AnyEquatable<T>, rhs: AnyEquatable<T>) -> Bool {
 }
 
 extension AnyEquatable
-    : CustomDebugStringConvertible
+   : CustomDebugStringConvertible
     , CustomStringConvertible  {
     var description: String {
         return "\(_target)"

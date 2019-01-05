@@ -22,7 +22,7 @@ NSInteger RX_number_of_swizzled_methods(void);
 @property (nonatomic, copy) void (^ __nonnull invokedMethod)(void);
 @end
 
-@interface RXObjCTestRuntime : NSObject
+@interface RXObjCTestRuntime: NSObject
 
 +(id __nonnull)castClosure:(void (^ __nonnull)(void))closure;
 +(BOOL)isForwardingIMP:(IMP __nullable)implementation;
@@ -30,7 +30,7 @@ NSInteger RX_number_of_swizzled_methods(void);
 
 @end
 
-@interface _TestSendMessage : NSObject
+@interface _TestSendMessage: NSObject
 
 @end
 
@@ -50,7 +50,7 @@ typedef struct some_insanely_large_struct {
 
 #define _DECLARE_OBSERVING_CLASS_PAIR_FOR_TEST(testName, baseContent, subclassContent)                                                         \
 /*##########################################################################################################################################*/ \
-@interface SentMessageTestBase_ ## testName : NSObject<SentMessageTestClassCreationProtocol> { }                                               \
+@interface SentMessageTestBase_ ## testName: NSObject<SentMessageTestClassCreationProtocol> { }                                               \
                                                                                                                                                \
 @property (nonatomic, strong, readonly) NSArray<Arguments *> * __nonnull baseMessages;                                                         \
 @property (nonatomic, copy) void (^ __nonnull invokedMethod)(void);                                                                                \
@@ -153,7 +153,7 @@ typedef struct some_insanely_large_struct {
 baseContent                                                                                                                                    \
 @end                                                                                                                                           \
                                                                                                                                                \
-@interface SentMessageTest_ ## testName : SentMessageTestBase_ ## testName<SentMessageTestClassCreationProtocol> { }                           \
+@interface SentMessageTest_ ## testName: SentMessageTestBase_ ## testName<SentMessageTestClassCreationProtocol> { }                           \
                                                                                                                                                \
 @property (nonatomic, strong, readonly) NSArray<Arguments *> * __nonnull messages;                                                             \
                                                                                                                                                \
@@ -186,5 +186,5 @@ _DECLARE_OBSERVING_CLASS_PAIR_FOR_TEST(optimized_int_base, -(void)optimized:(id 
 
 DECLARE_OBSERVING_CLASS_PAIR_FOR_TEST(all_supported_types)
 
-@interface SentMessageTest_shared_mock_interceptor : SentMessageTest_shared
+@interface SentMessageTest_shared_mock_interceptor: SentMessageTest_shared
 @end

@@ -6,14 +6,14 @@
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
-protocol CombineLatestProtocol : class {
+protocol CombineLatestProtocol: class {
     func next(_ index: Int)
     func fail(_ error: Swift.Error)
     func done(_ index: Int)
 }
 
 class CombineLatestSink<O: ObserverType>
-    : Sink<O>
+   : Sink<O>
     , CombineLatestProtocol {
     typealias Element = O.E
    
@@ -91,7 +91,7 @@ class CombineLatestSink<O: ObserverType>
 }
 
 final class CombineLatestObserver<ElementType>
-    : ObserverType
+   : ObserverType
     , LockOwnerType
     , SynchronizedOnType {
     typealias Element = ElementType

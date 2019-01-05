@@ -44,7 +44,7 @@ extension ObservableType {
     }
 }
 
-final fileprivate class ScanSink<ElementType, O: ObserverType> : Sink<O>, ObserverType {
+final fileprivate class ScanSink<ElementType, O: ObserverType>: Sink<O>, ObserverType {
     typealias Accumulate = O.E
     typealias Parent = Scan<ElementType, Accumulate>
     typealias E = ElementType
@@ -93,7 +93,7 @@ final fileprivate class Scan<Element, Accumulate>: Producer<Accumulate> {
         _accumulator = accumulator
     }
     
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Accumulate {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Accumulate {
         let sink = ScanSink(parent: self, observer: observer, cancel: cancel)
         let subscription = _source.subscribe(sink)
         return (sink: sink, subscription: subscription)

@@ -13,7 +13,7 @@ import struct Foundation.Date
 /**
 Scheduler that tests virtual scheduler
 */
-final class TestVirtualScheduler : VirtualTimeScheduler<TestVirtualSchedulerVirtualTimeConverter> {
+final class TestVirtualScheduler: VirtualTimeScheduler<TestVirtualSchedulerVirtualTimeConverter> {
     init(initialClock: Int = 0) {
         super.init(initialClock: initialClock, converter: TestVirtualSchedulerVirtualTimeConverter())
     }
@@ -22,7 +22,7 @@ final class TestVirtualScheduler : VirtualTimeScheduler<TestVirtualSchedulerVirt
 /**
 One virtual unit is equal to 10 seconds.
 */
-struct TestVirtualSchedulerVirtualTimeConverter : VirtualTimeConverterType {
+struct TestVirtualSchedulerVirtualTimeConverter: VirtualTimeConverterType {
     typealias VirtualTimeUnit = Int
     typealias VirtualTimeIntervalUnit = Int
 

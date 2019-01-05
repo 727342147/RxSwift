@@ -9,7 +9,7 @@
 import RxSwift
 
 /// Virtual time scheduler used for testing applications and libraries built using RxSwift.
-public class TestScheduler : VirtualTimeScheduler<TestSchedulerVirtualTimeConverter> {
+public class TestScheduler: VirtualTimeScheduler<TestSchedulerVirtualTimeConverter> {
     /// Default values of scheduler times.
     public struct Defaults {
         /// Default absolute time when to create tested observable sequence.
@@ -94,8 +94,8 @@ public class TestScheduler : VirtualTimeScheduler<TestSchedulerVirtualTimeConver
     - returns: Observer with timestamped recordings of events that were received during the virtual time window when the subscription to the source sequence was active.
     */
     public func start<Element>(created: TestTime, subscribed: TestTime, disposed: TestTime, create: @escaping () -> Observable<Element>) -> TestableObserver<Element> {
-        var source : Observable<Element>? = nil
-        var subscription : Disposable? = nil
+        var source: Observable<Element>? = nil
+        var subscription: Disposable? = nil
         let observer = createObserver(Element.self)
         
         _ = self.scheduleAbsoluteVirtual((), time: created) { _ in

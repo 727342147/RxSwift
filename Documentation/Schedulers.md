@@ -70,7 +70,7 @@ public protocol Scheduler: ImmediateScheduler {
     associatedtype TimeInterval
     associatedtype Time
 
-    var now : Time {
+    var now: Time {
         get
     }
 
@@ -81,7 +81,7 @@ public protocol Scheduler: ImmediateScheduler {
 In case the scheduler only has periodic scheduling capabilities, you can inform Rx by implementing the `PeriodicScheduler` protocol:
 
 ```swift
-public protocol PeriodicScheduler : Scheduler {
+public protocol PeriodicScheduler: Scheduler {
     func schedulePeriodic<StateType>(state: StateType, startAfter: TimeInterval, period: TimeInterval, action: (StateType) -> StateType) -> RxResult<Disposable>
 }
 ```

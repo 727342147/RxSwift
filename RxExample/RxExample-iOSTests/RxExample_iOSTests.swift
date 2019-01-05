@@ -20,28 +20,28 @@ let resolution: TimeInterval = 0.2 // seconds
 This is just an example of one way how this can be done.
 */
 class RxExample_iOSTests
-    : XCTestCase {
+   : XCTestCase {
 
-    let booleans = ["t" : true, "f" : false]
-    let events = ["x" : ()]
+    let booleans = ["t": true, "f": false]
+    let events = ["x": ()]
     let errors = [
-        "#1" : NSError(domain: "Some unknown error maybe", code: -1, userInfo: nil),
-        "#u" : NSError(domain: NSURLErrorDomain, code: NSURLErrorTimedOut, userInfo: nil)
+        "#1": NSError(domain: "Some unknown error maybe", code: -1, userInfo: nil),
+        "#u": NSError(domain: NSURLErrorDomain, code: NSURLErrorTimedOut, userInfo: nil)
     ]
     let validations = [
-        "e" : ValidationResult.empty,
-        "f" : ValidationResult.failed(message: ""),
-        "o" : ValidationResult.ok(message: "Validated"),
-        "v" : ValidationResult.validating
+        "e": ValidationResult.empty,
+        "f": ValidationResult.failed(message: ""),
+        "o": ValidationResult.ok(message: "Validated"),
+        "v": ValidationResult.validating
     ]
 
     let stringValues = [
-        "u1" : "verysecret",
-        "u2" : "secretuser",
-        "u3" : "secretusername",
-        "p1" : "huge secret",
-        "p2" : "secret",
-        "e" : ""
+        "u1": "verysecret",
+        "u2": "secretuser",
+        "u3": "secretusername",
+        "p1": "huge secret",
+        "p2": "secret",
+        "e": ""
     ]
 
     ////////////////////////////////////////////////////////////////////////////////

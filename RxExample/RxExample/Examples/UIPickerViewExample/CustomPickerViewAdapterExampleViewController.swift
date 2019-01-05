@@ -29,7 +29,7 @@ final class CustomPickerViewAdapterExampleViewController: ViewController {
 }
 
 final class PickerViewViewAdapter
-    : NSObject
+   : NSObject
     , UIPickerViewDataSource
     , UIPickerViewDelegate
     , RxPickerViewDataSourceType

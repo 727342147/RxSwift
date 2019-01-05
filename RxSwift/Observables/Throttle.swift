@@ -29,7 +29,7 @@ extension ObservableType {
 }
 
 final fileprivate class ThrottleSink<O: ObserverType>
-    : Sink<O>
+   : Sink<O>
     , ObserverType
     , LockOwnerType
     , SynchronizedOnType {
@@ -140,7 +140,7 @@ final fileprivate class ThrottleSink<O: ObserverType>
     }
 }
 
-final fileprivate class Throttle<Element> : Producer<Element> {
+final fileprivate class Throttle<Element>: Producer<Element> {
     
     fileprivate let _source: Observable<Element>
     fileprivate let _dueTime: RxTimeInterval

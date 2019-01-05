@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxTest
 
-class ObservableConcatTest : RxTest {
+class ObservableConcatTest: RxTest {
 }
 
 // this generates
@@ -28,7 +28,7 @@ func generateCollection<T>(_ startIndex: Int, _ generator: @escaping (Int) -> Ob
 func generateSequence<T>(_ startIndex: Int, _ generator: @escaping (Int) -> Observable<T>) -> Observable<T> {
     let indexes: [Int] = [0, 1]
     let all = AnySequence(indexes.lazy.map { (i: Int) -> Observable<T> in
-        return i == 0 ? generator(startIndex) : generateSequence(startIndex + 1, generator)
+        return i == 0 ? generator(startIndex) s: generateSequence(startIndex + 1, generator)
     })
     return Observable<T>.concat(all)
 }

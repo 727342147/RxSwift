@@ -6,7 +6,7 @@
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
-extension ObservableType where E : RxAbstractInteger {
+extension ObservableType where E: RxAbstractInteger {
     /**
      Generates an observable sequence of integral numbers within a specified range, using the specified scheduler to generate and send out observer messages.
 
@@ -22,7 +22,7 @@ extension ObservableType where E : RxAbstractInteger {
     }
 }
 
-final fileprivate class RangeProducer<E: RxAbstractInteger> : Producer<E> {
+final fileprivate class RangeProducer<E: RxAbstractInteger>: Producer<E> {
     fileprivate let _start: E
     fileprivate let _count: E
     fileprivate let _scheduler: ImmediateSchedulerType
@@ -41,14 +41,14 @@ final fileprivate class RangeProducer<E: RxAbstractInteger> : Producer<E> {
         _scheduler = scheduler
     }
     
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == E {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == E {
         let sink = RangeSink(parent: self, observer: observer, cancel: cancel)
         let subscription = sink.run()
         return (sink: sink, subscription: subscription)
     }
 }
 
-final fileprivate class RangeSink<O: ObserverType> : Sink<O> where O.E: RxAbstractInteger {
+final fileprivate class RangeSink<O: ObserverType>: Sink<O> where O.E: RxAbstractInteger {
     typealias Parent = RangeProducer<O.E>
     
     private let _parent: Parent

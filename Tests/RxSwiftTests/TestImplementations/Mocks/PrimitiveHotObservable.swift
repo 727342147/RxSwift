@@ -13,7 +13,7 @@ import Dispatch
 let SubscribedToHotObservable = Subscription(0)
 let UnsunscribedFromHotObservable = Subscription(0, 0)
 
-class PrimitiveHotObservable<ElementType> : ObservableType {
+class PrimitiveHotObservable<ElementType>: ObservableType {
     typealias E = ElementType
 
     typealias Events = Recorded<E>
@@ -33,7 +33,7 @@ class PrimitiveHotObservable<ElementType> : ObservableType {
         observers.on(event)
     }
     
-    func subscribe<O : ObserverType>(_ observer: O) -> Disposable where O.E == E {
+    func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == E {
         lock.lock()
         defer { lock.unlock() }
 

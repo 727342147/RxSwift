@@ -21,7 +21,7 @@ extension ObservableType {
     }
 }
 
-final fileprivate class GroupedObservableImpl<Key, Element> : Observable<Element> {
+final fileprivate class GroupedObservableImpl<Key, Element>: Observable<Element> {
     private var _subject: PublishSubject<Element>
     private var _refCount: RefCountDisposable
     
@@ -39,7 +39,7 @@ final fileprivate class GroupedObservableImpl<Key, Element> : Observable<Element
 
 
 final fileprivate class GroupBySink<Key: Hashable, Element, O: ObserverType>
-    : Sink<O>
+   : Sink<O>
     , ObserverType where O.E == GroupedObservable<Key, Element> {
     typealias E = Element
     typealias ResultType = O.E
@@ -127,7 +127,7 @@ final fileprivate class GroupBy<Key: Hashable, Element>: Producer<GroupedObserva
         _selector = selector
     }
 
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == GroupedObservable<Key,Element> {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == GroupedObservable<Key,Element> {
         let sink = GroupBySink(parent: self, observer: observer, cancel: cancel)
         return (sink: sink, subscription: sink.run())
     }

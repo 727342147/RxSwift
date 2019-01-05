@@ -12,7 +12,7 @@ import RxCocoa
 import XCTest
 
 // UITextView
-final class UITextViewTests : RxTest {
+final class UITextViewTests: RxTest {
     func test_completesOnDealloc() {
         let createView: () -> UITextView = { UITextView(frame: CGRect(x: 0, y: 0, width: 1, height: 1)) }
 
@@ -135,7 +135,7 @@ private extension String {
     }
 }
 
-final class UITextViewSubclass2 : UITextView {
+final class UITextViewSubclass2: UITextView {
     var didSetText = false
     var didSetAttributedText = false
     

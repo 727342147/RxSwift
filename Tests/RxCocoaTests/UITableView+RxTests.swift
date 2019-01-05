@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import XCTest
 
-final class UITableViewTests : RxTest {
+final class UITableViewTests: RxTest {
     func test_DelegateEventCompletesOnDealloc() {
         let createView: () -> UITableView = { UITableView(frame: CGRect(x: 0, y: 0, width: 1, height: 1)) }
 

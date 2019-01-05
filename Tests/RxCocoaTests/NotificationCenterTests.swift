@@ -14,7 +14,7 @@ import class Foundation.NotificationCenter
 import class Foundation.NSObject
 import struct Foundation.Notification
 
-class NSNotificationCenterTests : RxTest {
+class NSNotificationCenterTests: RxTest {
     func testNotificationCenterWithoutObject() {
         let notificationCenter = NotificationCenter()
         

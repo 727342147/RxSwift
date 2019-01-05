@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum RxDataSourceError : Error {
+enum RxDataSourceError: Error {
   case preconditionFailed(message: String)
 }
 

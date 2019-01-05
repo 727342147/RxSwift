@@ -18,7 +18,7 @@ func indexSet(_ values: [Int]) -> IndexSet {
     return indexSet as IndexSet
 }
 
-extension UITableView : SectionedViewType {
+extension UITableView: SectionedViewType {
   
     public func insertItemsAtIndexPaths(_ paths: [IndexPath], animationStyle: UITableViewRowAnimation) {
         self.insertRows(at: paths, with: animationStyle)
@@ -59,7 +59,7 @@ extension UITableView : SectionedViewType {
     }
 }
 
-extension UICollectionView : SectionedViewType {
+extension UICollectionView: SectionedViewType {
     public func insertItemsAtIndexPaths(_ paths: [IndexPath], animationStyle: UITableViewRowAnimation) {
         self.insertItems(at: paths)
     }

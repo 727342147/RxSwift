@@ -10,7 +10,7 @@ import RxCocoa
 import RxSwift
 import XCTest
 
-final class ControlEventTests : RxTest {
+final class ControlEventTests: RxTest {
     func testObservingIsAlwaysHappeningOnMainQueue() {
         let hotObservable = MainThreadPrimitiveHotObservable<Int>()
 

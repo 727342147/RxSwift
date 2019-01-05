@@ -30,7 +30,7 @@ extension ObservableType {
     }
 }
 
-final fileprivate class ObserveOn<E> : Producer<E> {
+final fileprivate class ObserveOn<E>: Producer<E> {
     let scheduler: ImmediateSchedulerType
     let source: Observable<E>
     
@@ -43,7 +43,7 @@ final fileprivate class ObserveOn<E> : Producer<E> {
 #endif
     }
     
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == E {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == E {
         let sink = ObserveOnSink(scheduler: scheduler, observer: observer, cancel: cancel)
         let subscription = source.subscribe(sink)
         return (sink: sink, subscription: subscription)
@@ -56,14 +56,14 @@ final fileprivate class ObserveOn<E> : Producer<E> {
 #endif
 }
 
-enum ObserveOnState : Int32 {
+enum ObserveOnState: Int32 {
     // pump is not running
     case stopped = 0
     // pump is running
     case running = 1
 }
 
-final fileprivate class ObserveOnSink<O: ObserverType> : ObserverBase<O.E> {
+final fileprivate class ObserveOnSink<O: ObserverType>: ObserverBase<O.E> {
     typealias E = O.E
     
     let _scheduler: ImmediateSchedulerType
@@ -164,7 +164,7 @@ final fileprivate class ObserveOnSink<O: ObserverType> : ObserverBase<O.E> {
     }
 #endif
 
-final fileprivate class ObserveOnSerialDispatchQueueSink<O: ObserverType> : ObserverBase<O.E> {
+final fileprivate class ObserveOnSerialDispatchQueueSink<O: ObserverType>: ObserverBase<O.E> {
     let scheduler: SerialDispatchQueueScheduler
     let observer: O
 
@@ -202,7 +202,7 @@ final fileprivate class ObserveOnSerialDispatchQueueSink<O: ObserverType> : Obse
     }
 }
 
-final fileprivate class ObserveOnSerialDispatchQueue<E> : Producer<E> {
+final fileprivate class ObserveOnSerialDispatchQueue<E>: Producer<E> {
     let scheduler: SerialDispatchQueueScheduler
     let source: Observable<E>
 
@@ -216,7 +216,7 @@ final fileprivate class ObserveOnSerialDispatchQueue<E> : Producer<E> {
         #endif
     }
 
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == E {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == E {
         let sink = ObserveOnSerialDispatchQueueSink(scheduler: scheduler, observer: observer, cancel: cancel)
         let subscription = source.subscribe(sink)
         return (sink: sink, subscription: subscription)

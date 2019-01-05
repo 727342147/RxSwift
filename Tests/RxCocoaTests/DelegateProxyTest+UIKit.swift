@@ -122,7 +122,7 @@ extension DelegateProxyTest {
 // MARK: Mocks
 
 final class ExtendTableViewDelegateProxy
-    : RxTableViewDelegateProxy
+   : RxTableViewDelegateProxy
     , TestDelegateProtocol {
     weak fileprivate(set) var control: UITableViewSubclass1?
 
@@ -133,7 +133,7 @@ final class ExtendTableViewDelegateProxy
 }
 
 final class UITableViewSubclass1
-    : UITableView
+   : UITableView
     , TestDelegateControl {
     func doThatTest(_ value: Int) {
         (delegate as! TestDelegateProtocol).testEventHappened?(value)
@@ -149,7 +149,7 @@ final class UITableViewSubclass1
 }
 
 final class ExtendTableViewDataSourceProxy
-    : RxTableViewDataSourceProxy
+   : RxTableViewDataSourceProxy
     , TestDelegateProtocol {
     weak fileprivate(set) var control: UITableViewSubclass2?
 
@@ -160,7 +160,7 @@ final class ExtendTableViewDataSourceProxy
 }
 
 final class UITableViewSubclass2
-    : UITableView
+   : UITableView
     , TestDelegateControl {
     func doThatTest(_ value: Int) {
         if dataSource != nil {
@@ -179,7 +179,7 @@ final class UITableViewSubclass2
 
 @available(iOS 10.0, tvOS 10.0, *)
 final class ExtendTableViewDataSourcePrefetchingProxy
-    : RxTableViewDataSourcePrefetchingProxy
+   : RxTableViewDataSourcePrefetchingProxy
     , TestDelegateProtocol {
     weak fileprivate(set) var control: UITableViewSubclass3?
 
@@ -191,7 +191,7 @@ final class ExtendTableViewDataSourcePrefetchingProxy
 
 @available(iOS 10.0, tvOS 10.0, *)
 final class UITableViewSubclass3
-    : UITableView
+   : UITableView
     , TestDelegateControl {
 
     func doThatTest(_ value: Int) {
@@ -210,7 +210,7 @@ final class UITableViewSubclass3
 }
 
 final class ExtendCollectionViewDelegateProxy
-    : RxCollectionViewDelegateProxy
+   : RxCollectionViewDelegateProxy
     , TestDelegateProtocol {
     weak fileprivate(set) var control: UICollectionViewSubclass1?
 
@@ -221,7 +221,7 @@ final class ExtendCollectionViewDelegateProxy
 }
 
 final class UICollectionViewSubclass1
-    : UICollectionView
+   : UICollectionView
     , TestDelegateControl {
     func doThatTest(_ value: Int) {
         (delegate as! TestDelegateProtocol).testEventHappened?(value)
@@ -237,7 +237,7 @@ final class UICollectionViewSubclass1
 }
 
 final class ExtendCollectionViewDataSourceProxy
-    : RxCollectionViewDataSourceProxy
+   : RxCollectionViewDataSourceProxy
     , TestDelegateProtocol {
     weak fileprivate(set) var control: UICollectionViewSubclass2?
 
@@ -248,7 +248,7 @@ final class ExtendCollectionViewDataSourceProxy
 }
 
 final class UICollectionViewSubclass2
-    : UICollectionView
+   : UICollectionView
     , TestDelegateControl {
 
     func doThatTest(_ value: Int) {
@@ -268,7 +268,7 @@ final class UICollectionViewSubclass2
 
 @available(iOS 10.0, tvOS 10.0, *)
 final class ExtendCollectionViewDataSourcePrefetchingProxy
-    : RxCollectionViewDataSourcePrefetchingProxy
+   : RxCollectionViewDataSourcePrefetchingProxy
     , TestDelegateProtocol {
     weak fileprivate(set) var control: UICollectionViewSubclass3?
 
@@ -280,7 +280,7 @@ final class ExtendCollectionViewDataSourcePrefetchingProxy
 
 @available(iOS 10.0, tvOS 10.0, *)
 final class UICollectionViewSubclass3
-    : UICollectionView
+   : UICollectionView
     , TestDelegateControl {
 
     func doThatTest(_ value: Int) {
@@ -299,7 +299,7 @@ final class UICollectionViewSubclass3
 }
 
 final class ExtendScrollViewDelegateProxy
-    : RxScrollViewDelegateProxy
+   : RxScrollViewDelegateProxy
     , TestDelegateProtocol {
     weak fileprivate(set) var control: UIScrollViewSubclass?
 
@@ -310,7 +310,7 @@ final class ExtendScrollViewDelegateProxy
 }
 
 final class UIScrollViewSubclass
-    : UIScrollView
+   : UIScrollView
     , TestDelegateControl {
     func doThatTest(_ value: Int) {
         (delegate as! TestDelegateProtocol).testEventHappened?(value)
@@ -327,7 +327,7 @@ final class UIScrollViewSubclass
 
 #if os(iOS)
 final class ExtendSearchBarDelegateProxy
-    : RxSearchBarDelegateProxy
+   : RxSearchBarDelegateProxy
     , TestDelegateProtocol {
     weak fileprivate(set) var control: UISearchBarSubclass?
     
@@ -338,7 +338,7 @@ final class ExtendSearchBarDelegateProxy
 }
 
 final class UISearchBarSubclass
-    : UISearchBar
+   : UISearchBar
     , TestDelegateControl {
     func doThatTest(_ value: Int) {
         (delegate as! TestDelegateProtocol).testEventHappened?(value)
@@ -355,7 +355,7 @@ final class UISearchBarSubclass
 #endif
 
 final class ExtendTextViewDelegateProxy
-    : RxTextViewDelegateProxy
+   : RxTextViewDelegateProxy
     , TestDelegateProtocol {
     weak fileprivate(set) var control: UITextViewSubclass?
 
@@ -366,7 +366,7 @@ final class ExtendTextViewDelegateProxy
 }
 
 final class UITextViewSubclass
-    : UITextView
+   : UITextView
     , TestDelegateControl {
     func doThatTest(_ value: Int) {
         (delegate as! TestDelegateProtocol).testEventHappened?(value)
@@ -382,7 +382,7 @@ final class UITextViewSubclass
 }
 #if os(iOS)
 final class ExtendSearchControllerDelegateProxy
-    : RxSearchControllerDelegateProxy
+   : RxSearchControllerDelegateProxy
     , TestDelegateProtocol {
     init(searchControllerSubclass: UISearchControllerSubclass) {
         super.init(searchController: searchControllerSubclass)
@@ -390,7 +390,7 @@ final class ExtendSearchControllerDelegateProxy
 }
 
 final class UISearchControllerSubclass
-    : UISearchController
+   : UISearchController
     , TestDelegateControl {
     func doThatTest(_ value: Int) {
         (delegate as! TestDelegateProtocol).testEventHappened?(value)
@@ -407,7 +407,7 @@ final class UISearchControllerSubclass
 
 
 final class ExtendPickerViewDelegateProxy
-    : RxPickerViewDelegateProxy
+   : RxPickerViewDelegateProxy
     , TestDelegateProtocol {
     init(pickerViewSubclass: UIPickerViewSubclass) {
         super.init(pickerView: pickerViewSubclass)
@@ -415,7 +415,7 @@ final class ExtendPickerViewDelegateProxy
 }
     
 final class UIPickerViewSubclass
-    : UIPickerView
+   : UIPickerView
     , TestDelegateControl {
     func doThatTest(_ value: Int) {
         (delegate as! TestDelegateProtocol).testEventHappened?(value)
@@ -433,7 +433,7 @@ final class UIPickerViewSubclass
 }
     
 final class ExtendPickerViewDataSourceProxy
-    : RxPickerViewDataSourceProxy
+   : RxPickerViewDataSourceProxy
     , TestDelegateProtocol {
     weak fileprivate(set) var control: UIPickerViewSubclass2?
         
@@ -460,7 +460,7 @@ final class UIPickerViewSubclass2: UIPickerView, TestDelegateControl {
 }
 
 final class ExtendWebViewDelegateProxy
-    : RxWebViewDelegateProxy
+   : RxWebViewDelegateProxy
     , TestDelegateProtocol {
     init(webViewSubclass: UIWebViewSubclass) {
         super.init(webView: webViewSubclass)
@@ -489,7 +489,7 @@ final class UIWebViewSubclass: UIWebView, TestDelegateControl {
 
 
 final class ExtendTextStorageDelegateProxy
-    : RxTextStorageDelegateProxy
+   : RxTextStorageDelegateProxy
     , TestDelegateProtocol {
 
     init(textStorageSubclass: NSTextStorageSubclass) {
@@ -498,7 +498,7 @@ final class ExtendTextStorageDelegateProxy
 }
 
 final class NSTextStorageSubclass
-    : NSTextStorage
+   : NSTextStorage
     , TestDelegateControl {
     func doThatTest(_ value: Int) {
         (delegate as! TestDelegateProtocol).testEventHappened?(value)
@@ -514,7 +514,7 @@ final class NSTextStorageSubclass
 }
 
 final class ExtendNavigationControllerDelegateProxy
-    : RxNavigationControllerDelegateProxy
+   : RxNavigationControllerDelegateProxy
     , TestDelegateProtocol {
     weak fileprivate(set) var control: UINavigationControllerSubclass?
 
@@ -525,7 +525,7 @@ final class ExtendNavigationControllerDelegateProxy
 }
 
 final class ExtendTabBarControllerDelegateProxy
-    : RxTabBarControllerDelegateProxy
+   : RxTabBarControllerDelegateProxy
     , TestDelegateProtocol {
     weak fileprivate(set) var tabBarControllerSubclass: UITabBarControllerSubclass?
     
@@ -536,7 +536,7 @@ final class ExtendTabBarControllerDelegateProxy
 }
 
 final class ExtendTabBarDelegateProxy
-    : RxTabBarDelegateProxy
+   : RxTabBarDelegateProxy
     , TestDelegateProtocol {
     weak fileprivate(set) var control: UITabBarSubclass?
     
@@ -563,7 +563,7 @@ final class UINavigationControllerSubclass: UINavigationController, TestDelegate
 }
 
 final class UITabBarControllerSubclass
-    : UITabBarController
+   : UITabBarController
     , TestDelegateControl {
     func doThatTest(_ value: Int) {
         (delegate as! TestDelegateProtocol).testEventHappened?(value)

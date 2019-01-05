@@ -11,7 +11,7 @@ import RxSwift
 import RxTest
 import Dispatch
 
-class ObservableDelayTest : RxTest {
+class ObservableDelayTest: RxTest {
 }
 
 extension ObservableDelayTest {

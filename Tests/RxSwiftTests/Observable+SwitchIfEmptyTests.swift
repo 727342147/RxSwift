@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxTest
 
-class ObservableSwitchIfEmptyTest : RxTest {
+class ObservableSwitchIfEmptyTest: RxTest {
 }
 
 extension ObservableSwitchIfEmptyTest {

@@ -20,7 +20,7 @@ public struct AnimatableSectionModel<Section: IdentifiableType, ItemType: Identi
 }
 
 extension AnimatableSectionModel
-    : AnimatableSectionModelType {
+   : AnimatableSectionModelType {
     public typealias Item = ItemType
     public typealias Identity = Section.Identity
 
@@ -40,7 +40,7 @@ extension AnimatableSectionModel
 
 
 extension AnimatableSectionModel
-    : CustomStringConvertible {
+   : CustomStringConvertible {
 
     public var description: String {
         return "HashableSectionModel(model: \"\(self.model)\", items: \(items))"

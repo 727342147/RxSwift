@@ -288,7 +288,7 @@ Observer that enforces interface binding rules:
  queue.
 */
 @available(*, deprecated, renamed: "Binder")
-public final class UIBindingObserver<UIElementType, Value> : ObserverType where UIElementType: AnyObject {
+public final class UIBindingObserver<UIElementType, Value>: ObserverType where UIElementType: AnyObject {
     public typealias E = Value
 
     weak var UIElement: UIElementType?

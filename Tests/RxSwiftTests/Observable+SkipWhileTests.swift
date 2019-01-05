@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxTest
 
-class ObservableSkipWhileTest : RxTest {
+class ObservableSkipWhileTest: RxTest {
 }
 
 extension ObservableSkipWhileTest {

@@ -17,7 +17,7 @@ and pending work.
 That means that enqueued work could possibly be executed later on a different thread.
 */
 final class AsyncLock<I: InvocableType>
-    : Disposable
+   : Disposable
     , Lock
     , SynchronizedDisposeType {
     typealias Action = () -> Void

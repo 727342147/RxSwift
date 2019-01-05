@@ -11,7 +11,7 @@ import RxCocoa
 import Cocoa
 import AppKit
 
-class IntroductionExampleViewController : ViewController {
+class IntroductionExampleViewController: ViewController {
     @IBOutlet var a: NSTextField!
     @IBOutlet var b: NSTextField!
     @IBOutlet var c: NSTextField!

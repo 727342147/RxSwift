@@ -8,6 +8,6 @@
 
 import RxSwift
 
-extension Observable : Equatable {
+extension Observable: Equatable {
     
 }

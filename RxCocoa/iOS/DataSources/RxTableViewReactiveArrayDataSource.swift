@@ -13,7 +13,7 @@ import RxSwift
 
 // objc monkey business
 class _RxTableViewReactiveArrayDataSource
-    : NSObject
+   : NSObject
     , UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -39,7 +39,7 @@ class _RxTableViewReactiveArrayDataSource
 
 
 class RxTableViewReactiveArrayDataSourceSequenceWrapper<S: Sequence>
-    : RxTableViewReactiveArrayDataSource<S.Iterator.Element>
+   : RxTableViewReactiveArrayDataSource<S.Iterator.Element>
     , RxTableViewDataSourceType {
     typealias Element = S
 
@@ -57,7 +57,7 @@ class RxTableViewReactiveArrayDataSourceSequenceWrapper<S: Sequence>
 
 // Please take a look at `DelegateProxyType.swift`
 class RxTableViewReactiveArrayDataSource<Element>
-    : _RxTableViewReactiveArrayDataSource
+   : _RxTableViewReactiveArrayDataSource
     , SectionedViewDataSourceType {
     typealias CellFactory = (UITableView, Int, Element) -> UITableViewCell
     

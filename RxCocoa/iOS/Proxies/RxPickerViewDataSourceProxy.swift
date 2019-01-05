@@ -29,7 +29,7 @@ final fileprivate class PickerViewDataSourceNotSet: NSObject, UIPickerViewDataSo
 
 /// For more information take a look at `DelegateProxyType`.
 public class RxPickerViewDataSourceProxy
-    : DelegateProxy<UIPickerView, UIPickerViewDataSource>
+   : DelegateProxy<UIPickerView, UIPickerViewDataSource>
     , DelegateProxyType
     , UIPickerViewDataSource {
 

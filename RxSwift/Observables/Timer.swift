@@ -6,7 +6,7 @@
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
-extension ObservableType where E : RxAbstractInteger {
+extension ObservableType where E: RxAbstractInteger {
     /**
      Returns an observable sequence that produces a value after each period, using the specified scheduler to run timers and to send out observer messages.
 
@@ -46,7 +46,7 @@ extension ObservableType where E: RxAbstractInteger {
     }
 }
 
-final fileprivate class TimerSink<O: ObserverType> : Sink<O> where O.E : RxAbstractInteger  {
+final fileprivate class TimerSink<O: ObserverType>: Sink<O> where O.E: RxAbstractInteger  {
     typealias Parent = Timer<O.E>
     
     private let _parent: Parent
@@ -64,7 +64,7 @@ final fileprivate class TimerSink<O: ObserverType> : Sink<O> where O.E : RxAbstr
     }
 }
 
-final fileprivate class TimerOneOffSink<O: ObserverType> : Sink<O> where O.E : RxAbstractInteger {
+final fileprivate class TimerOneOffSink<O: ObserverType>: Sink<O> where O.E: RxAbstractInteger {
     typealias Parent = Timer<O.E>
     
     private let _parent: Parent
@@ -96,7 +96,7 @@ final fileprivate class Timer<E: RxAbstractInteger>: Producer<E> {
         _period = period
     }
     
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == E {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == E {
         if let _ = _period {
             let sink = TimerSink(parent: self, observer: observer, cancel: cancel)
             let subscription = sink.run()

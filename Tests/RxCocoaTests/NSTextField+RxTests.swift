@@ -45,7 +45,7 @@ extension NSTextFieldTests {
             let notification = Notification(
                 name: NSControl.textDidChangeNotification,
                 object: textField,
-                userInfo: ["NSFieldEditor" : NSText()])
+                userInfo: ["NSFieldEditor": NSText()])
             #if swift(>=4.2)
                 textField.delegate?.controlTextDidChange?(notification)
             #else

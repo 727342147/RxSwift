@@ -760,7 +760,7 @@ static NSMutableDictionary<NSString *, RXInterceptWithOptimizedObserver> *optimi
         RX_THROW_ERROR([NSError errorWithDomain:RXObjCRuntimeErrorDomain
                                            code:RXObjCRuntimeErrorObjectMessagesAlreadyBeingIntercepted
                                        userInfo:@{
-                                                  RXObjCRuntimeErrorIsKVOKey : @(isKVO)
+                                                  RXObjCRuntimeErrorIsKVOKey: @(isKVO)
                                                   }], nil);
     }
 

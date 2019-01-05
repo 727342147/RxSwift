@@ -11,7 +11,7 @@ import RxCocoa
 import XCTest
 import RxTest
 
-class ObservableConvertibleSharedSequenceTests : SharedSequenceTest { }
+class ObservableConvertibleSharedSequenceTests: SharedSequenceTest { }
 
 extension ObservableConvertibleSharedSequenceTests {
     func testAsSharedSequence_onErrorJustReturn() {

@@ -6,7 +6,7 @@
 //  Copyright © 2017 Krunoslav Zaher. All rights reserved.
 //
 
-fileprivate final class AsSingleSink<O: ObserverType> : Sink<O>, ObserverType {
+fileprivate final class AsSingleSink<O: ObserverType>: Sink<O>, ObserverType {
     typealias ElementType = O.E
     typealias E = ElementType
 
@@ -44,7 +44,7 @@ final class AsSingle<Element>: Producer<Element> {
         _source = source
     }
 
-    override func run<O : ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
+    override func run<O: ObserverType>(_ observer: O, cancel: Cancelable) -> (sink: Disposable, subscription: Disposable) where O.E == Element {
         let sink = AsSingleSink(observer: observer, cancel: cancel)
         let subscription = _source.subscribe(sink)
         return (sink: sink, subscription: subscription)

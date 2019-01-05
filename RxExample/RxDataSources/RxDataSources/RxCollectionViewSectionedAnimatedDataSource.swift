@@ -19,7 +19,7 @@ import RxCocoa
  Take a look at randomized sections.
 */
 open class RxCollectionViewSectionedAnimatedDataSource<S: AnimatableSectionModelType>
-    : CollectionViewSectionedDataSource<S>
+   : CollectionViewSectionedDataSource<S>
     , RxCollectionViewDataSourceType {
     public typealias Element = [S]
 

@@ -9,7 +9,7 @@
 import RxSwift
 import struct Foundation.URL
 
-class MockWireframe : Wireframe {
+class MockWireframe: Wireframe {
     let _openURL: (URL) -> ()
     let _promptFor: (String, Any, [Any]) -> Observable<Any>
 

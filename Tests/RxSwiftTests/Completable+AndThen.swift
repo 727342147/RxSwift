@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxTest
 
-class CompletableAndThenTest : RxTest {
+class CompletableAndThenTest: RxTest {
 }
 
 extension CompletableAndThenTest {

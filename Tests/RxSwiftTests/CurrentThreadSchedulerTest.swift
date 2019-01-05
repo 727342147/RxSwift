@@ -9,7 +9,7 @@
 import RxSwift
 import XCTest
 
-class CurrentThreadSchedulerTest : RxTest {
+class CurrentThreadSchedulerTest: RxTest {
 
 }
 

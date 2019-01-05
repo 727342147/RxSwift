@@ -6,7 +6,7 @@
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
-struct EquatableArray<Element: Equatable> : Equatable {
+struct EquatableArray<Element: Equatable>: Equatable {
     let elements: [Element]
     init(_ elements: [Element]) {
         self.elements = elements

@@ -16,7 +16,7 @@
     }
 
     open class RxPickerViewDelegateProxy
-        : DelegateProxy<UIPickerView, UIPickerViewDelegate>
+       : DelegateProxy<UIPickerView, UIPickerViewDelegate>
         , DelegateProxyType 
         , UIPickerViewDelegate {
 

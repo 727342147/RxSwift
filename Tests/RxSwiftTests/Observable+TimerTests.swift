@@ -12,7 +12,7 @@ import RxTest
 
 import struct Foundation.Date
 
-class ObservableTimerTest : RxTest {
+class ObservableTimerTest: RxTest {
 }
 
 extension ObservableTimerTest {

@@ -10,7 +10,7 @@ import struct Foundation.Date
 import RxSwift
 
 /// Converter from virtual time and time interval measured in `Int`s to `Date` and `NSTimeInterval`.
-public struct TestSchedulerVirtualTimeConverter : VirtualTimeConverterType {
+public struct TestSchedulerVirtualTimeConverter: VirtualTimeConverterType {
     /// Virtual time unit used that represents ticks of virtual clock.
     public typealias VirtualTimeUnit = Int
 

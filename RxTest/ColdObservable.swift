@@ -14,14 +14,14 @@ import RxSwift
 ///
 /// Event times represent relative offset to subscription time.
 final class ColdObservable<Element>
-    : TestableObservable<Element> {
+   : TestableObservable<Element> {
 
     override init(testScheduler: TestScheduler, recordedEvents: [Recorded<Event<Element>>]) {
         super.init(testScheduler: testScheduler, recordedEvents: recordedEvents)
     }
 
     /// Subscribes `observer` to receive events for this sequence.
-    override func subscribe<O : ObserverType>(_ observer: O) -> Disposable where O.E == Element {
+    override func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == Element {
         subscriptions.append(Subscription(testScheduler.clock))
         
         let i = self.subscriptions.count - 1

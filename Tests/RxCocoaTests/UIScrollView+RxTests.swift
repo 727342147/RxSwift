@@ -14,7 +14,7 @@ import UIKit
 import XCTest
 import RxTest
 
-final class UIScrollViewTests : RxTest {}
+final class UIScrollViewTests: RxTest {}
 
 extension UIScrollViewTests {
 
@@ -360,7 +360,7 @@ extension UIScrollViewTests {
 }
 
 @objc final class MockScrollViewDelegate
-    : NSObject
+   : NSObject
     , UIScrollViewDelegate {}
 
 extension UIScrollViewTests {

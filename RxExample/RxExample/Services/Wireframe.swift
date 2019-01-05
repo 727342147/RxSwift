@@ -52,7 +52,7 @@ class DefaultWireframe: Wireframe {
         #endif
     }
 
-    func promptFor<Action : CustomStringConvertible>(_ message: String, cancelAction: Action, actions: [Action]) -> Observable<Action> {
+    func promptFor<Action: CustomStringConvertible>(_ message: String, cancelAction: Action, actions: [Action]) -> Observable<Action> {
         #if os(iOS)
         return Observable.create { observer in
             let alertView = UIAlertController(title: "RxExample", message: message, preferredStyle: .alert)
@@ -79,7 +79,7 @@ class DefaultWireframe: Wireframe {
 }
 
 
-extension RetryResult : CustomStringConvertible {
+extension RetryResult: CustomStringConvertible {
     var description: String {
         switch self {
         case .retry:

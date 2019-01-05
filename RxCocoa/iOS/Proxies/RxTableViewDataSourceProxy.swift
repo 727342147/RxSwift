@@ -18,7 +18,7 @@ extension UITableView: HasDataSource {
 fileprivate let tableViewDataSourceNotSet = TableViewDataSourceNotSet()
 
 fileprivate final class TableViewDataSourceNotSet
-    : NSObject
+   : NSObject
     , UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,7 +32,7 @@ fileprivate final class TableViewDataSourceNotSet
 
 /// For more information take a look at `DelegateProxyType`.
 open class RxTableViewDataSourceProxy
-    : DelegateProxy<UITableView, UITableViewDataSource>
+   : DelegateProxy<UITableView, UITableViewDataSource>
     , DelegateProxyType 
     , UITableViewDataSource {
 

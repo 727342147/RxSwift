@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class SimpleTableViewExampleViewController : ViewController, UITableViewDelegate {
+class SimpleTableViewExampleViewController: ViewController, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
 
     override func viewDidLoad() {

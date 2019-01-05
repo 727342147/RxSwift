@@ -13,7 +13,7 @@ import RxBlocking
 
 
 
-final class SentMessageTest : RxTest {
+final class SentMessageTest: RxTest {
     var testClosure: () -> () = { }
 
     func dynamicClassName(_ baseClassName: String) -> String {
@@ -1489,7 +1489,7 @@ extension SentMessageTest {
 
 extension SentMessageTest {
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
 
     }
 
@@ -1510,7 +1510,7 @@ extension SentMessageTest {
 
 }
 
-extension some_insanely_large_struct : Equatable {
+extension some_insanely_large_struct: Equatable {
 
 }
 

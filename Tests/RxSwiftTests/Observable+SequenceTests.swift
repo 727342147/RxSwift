@@ -10,7 +10,7 @@ import XCTest
 import RxSwift
 import RxTest
 
-class ObservableSequenceTest : RxTest {
+class ObservableSequenceTest: RxTest {
 }
 
 extension ObservableSequenceTest {

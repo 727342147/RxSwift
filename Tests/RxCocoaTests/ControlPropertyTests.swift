@@ -11,7 +11,7 @@ import RxCocoa
 import RxSwift
 import RxTest
 
-final class ControlPropertyTests : RxTest {
+final class ControlPropertyTests: RxTest {
 }
 
 extension ControlPropertyTests {

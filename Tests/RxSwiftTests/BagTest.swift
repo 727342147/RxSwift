@@ -11,7 +11,7 @@
 import XCTest
 @testable import RxSwift
 
-final class BagTest : RxTest {
+final class BagTest: RxTest {
     override var accumulateStatistics: Bool {
         return false
     }

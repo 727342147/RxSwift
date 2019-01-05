@@ -18,7 +18,7 @@ public struct ItemPath {
     }
 }
 
-extension ItemPath : Equatable {
+extension ItemPath: Equatable {
     
 }
 

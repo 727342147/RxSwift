@@ -213,7 +213,7 @@ public extension Reachability {
     
     var description: String {
         
-        let W = isRunningOnDevice ? (isOnWWANFlagSet ? "W" : "-") : "X"
+        let W = isRunningOnDevice ? (isOnWWANFlagSet ? "W": "-") : "X"
         let R = isReachableFlagSet ? "R" : "-"
         let c = isConnectionRequiredFlagSet ? "c" : "-"
         let t = isTransientConnectionFlagSet ? "t" : "-"

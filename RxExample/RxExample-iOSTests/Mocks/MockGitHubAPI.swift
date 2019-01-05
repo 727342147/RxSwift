@@ -8,7 +8,7 @@
 
 import RxSwift
 
-class MockGitHubAPI : GitHubAPI {
+class MockGitHubAPI: GitHubAPI {
     let _usernameAvailable: (String) -> Observable<Bool>
     let _signup: ((String, String)) -> Observable<Bool>
 

@@ -17,7 +17,7 @@
 
     /// For more information take a look at `DelegateProxyType`.
     open class RxNavigationControllerDelegateProxy
-        : DelegateProxy<UINavigationController, UINavigationControllerDelegate>
+       : DelegateProxy<UINavigationController, UINavigationControllerDelegate>
         , DelegateProxyType 
         , UINavigationControllerDelegate {
 

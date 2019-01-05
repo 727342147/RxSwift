@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class SimpleTableViewExampleSectionedViewController
-    : ViewController
+   : ViewController
     , UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
 

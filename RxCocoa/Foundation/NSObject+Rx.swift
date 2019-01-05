@@ -252,7 +252,7 @@ extension Reactive where Base: AnyObject {
     }
 
     fileprivate final class DeallocatingProxy
-        : MessageInterceptorSubject
+       : MessageInterceptorSubject
         , RXDeallocatingObserver {
         typealias E = ()
 
@@ -277,7 +277,7 @@ extension Reactive where Base: AnyObject {
     }
 
     fileprivate final class MessageSentProxy
-        : MessageInterceptorSubject
+       : MessageInterceptorSubject
         , RXMessageSentObserver {
         typealias E = [AnyObject]
 
@@ -334,7 +334,7 @@ fileprivate protocol KVOObservableProtocol {
 }
 
 fileprivate final class KVOObserver
-    : _RXKVOObserver
+   : _RXKVOObserver
     , Disposable {
     typealias Callback = (Any?) -> Void
 
@@ -362,7 +362,7 @@ fileprivate final class KVOObserver
 }
 
 fileprivate final class KVOObservable<Element>
-    : ObservableType
+   : ObservableType
     , KVOObservableProtocol {
     typealias E = Element?
 
@@ -383,7 +383,7 @@ fileprivate final class KVOObservable<Element>
         }
     }
 
-    func subscribe<O : ObserverType>(_ observer: O) -> Disposable where O.E == Element? {
+    func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == Element? {
         let observer = KVOObserver(parent: self) { (value) in
             if value as? NSNull != nil {
                 observer.on(.next(nil))
@@ -495,7 +495,7 @@ fileprivate extension KeyValueObservingOptions {
 
                 let nextElementsObservable = keyPathSections.count == 1
                     ? Observable.just(nextTarget)
-                    : observeWeaklyKeyPathFor(nextObject!, keyPathSections: remainingPaths, options: options)
+                   : observeWeaklyKeyPathFor(nextObject!, keyPathSections: remainingPaths, options: options)
                 
                 if isWeak {
                     return nextElementsObservable

@@ -17,7 +17,7 @@ let useAnimatedUpdateForCollectionView = false
 /**
 Code for reactive data sources is packed in [RxDataSources](https://github.com/RxSwiftCommunity/RxDataSources) project.
 */
-class PartialUpdatesViewController : ViewController {
+class PartialUpdatesViewController: ViewController {
 
     @IBOutlet weak var reloadTableViewOutlet: UITableView!
     @IBOutlet weak var partialUpdatesTableViewOutlet: UITableView!

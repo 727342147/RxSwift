@@ -26,7 +26,7 @@ extension UIImagePickerControllerTests {
         var completed = false
         var info:[String:AnyObject]?
         
-        let pickedInfo = [UIImagePickerControllerOriginalImage : UIImage()]
+        let pickedInfo = [UIImagePickerControllerOriginalImage: UIImage()]
         
         autoreleasepool {
             let imagePickerController = UIImagePickerController()

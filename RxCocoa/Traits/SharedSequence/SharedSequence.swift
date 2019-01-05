@@ -19,7 +19,7 @@ import RxSwift
 
     To find out more about units and how to use them, please visit `Documentation/Traits.md`.
 */
-public struct SharedSequence<S: SharingStrategyProtocol, Element> : SharedSequenceConvertibleType {
+public struct SharedSequence<S: SharingStrategyProtocol, Element>: SharedSequenceConvertibleType {
     public typealias E = Element
     public typealias SharingStrategy = S
 
@@ -82,7 +82,7 @@ public protocol SharingStrategyProtocol {
 /**
 A type that can be converted to `SharedSequence`.
 */
-public protocol SharedSequenceConvertibleType : ObservableConvertibleType {
+public protocol SharedSequenceConvertibleType: ObservableConvertibleType {
     associatedtype SharingStrategy: SharingStrategyProtocol
 
     /**
@@ -194,7 +194,7 @@ extension SharedSequence {
     }
 }
 
-extension SharedSequence where Element : RxAbstractInteger {
+extension SharedSequence where Element: RxAbstractInteger {
     /**
      Returns an observable sequence that produces a value after each period, using the specified scheduler to run timers and to send out observer messages.
 

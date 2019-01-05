@@ -44,8 +44,7 @@ func getMemoryInfo() -> (bytes: Int64, allocations: Int64) {
 #endif
 
 
-class RxTest
-    : XCTestCase {
+class RxTest: XCTestCase {
 
 #if TRACE_RESOURCES
     fileprivate var startResourceCount: Int32 = 0

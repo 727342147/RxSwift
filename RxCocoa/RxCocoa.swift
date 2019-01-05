@@ -15,7 +15,7 @@ import RxSwift
 
 /// RxCocoa errors.
 public enum RxCocoaError
-    : Swift.Error
+   : Swift.Error
     , CustomDebugStringConvertible {
     /// Unknown error has occurred.
     case unknown

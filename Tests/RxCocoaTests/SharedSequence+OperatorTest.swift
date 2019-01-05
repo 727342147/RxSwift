@@ -12,7 +12,7 @@ import RxCocoa
 import XCTest
 import RxTest
 
-class SharedSequenceOperatorTests : SharedSequenceTest { }
+class SharedSequenceOperatorTests: SharedSequenceTest { }
 
 // MARK: deferred
 extension SharedSequenceOperatorTests {

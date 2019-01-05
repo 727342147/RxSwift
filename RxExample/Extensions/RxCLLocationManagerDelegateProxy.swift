@@ -15,7 +15,7 @@ extension CLLocationManager: HasDelegate {
 }
 
 public class RxCLLocationManagerDelegateProxy
-    : DelegateProxy<CLLocationManager, CLLocationManagerDelegate>
+   : DelegateProxy<CLLocationManager, CLLocationManagerDelegate>
     , DelegateProxyType
     , CLLocationManagerDelegate {
 

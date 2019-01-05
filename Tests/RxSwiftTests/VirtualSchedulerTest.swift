@@ -14,7 +14,7 @@ import XCTest
 
 import struct Foundation.Date
 
-class VirtualSchedulerTest : RxTest {
+class VirtualSchedulerTest: RxTest {
 
 }
 

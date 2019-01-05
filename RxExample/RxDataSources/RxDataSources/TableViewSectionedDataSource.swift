@@ -13,7 +13,7 @@ import UIKit
 import RxCocoa
 
 open class TableViewSectionedDataSource<S: SectionModelType>
-    : NSObject
+   : NSObject
     , UITableViewDataSource
     , SectionedViewDataSourceType {
     
