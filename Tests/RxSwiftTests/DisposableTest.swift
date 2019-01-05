@@ -409,7 +409,7 @@ extension DisposableTest {
     }
 }
 
-fileprivate class TestDisposable: Disposable {
+private class TestDisposable: Disposable {
     var count = 0
     func dispose() {
         count += 1

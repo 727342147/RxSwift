@@ -33,7 +33,7 @@ extension ObservableType {
     }
 }
 
-final fileprivate class CombineLatestCollectionTypeSink<C: Collection, O: ObserverType>
+final private class CombineLatestCollectionTypeSink<C: Collection, O: ObserverType>
    : Sink<O> where C.Iterator.Element: ObservableConvertibleType {
     typealias R = O.E
     typealias Parent = CombineLatestCollectionType<C, R>
@@ -136,7 +136,7 @@ final fileprivate class CombineLatestCollectionTypeSink<C: Collection, O: Observ
     }
 }
 
-final fileprivate class CombineLatestCollectionType<C: Collection, R>: Producer<R> where C.Iterator.Element: ObservableConvertibleType {
+final private class CombineLatestCollectionType<C: Collection, R>: Producer<R> where C.Iterator.Element: ObservableConvertibleType {
     typealias ResultSelector = ([C.Iterator.Element.E]) throws -> R
     
     let _sources: C

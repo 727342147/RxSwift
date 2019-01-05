@@ -147,7 +147,7 @@ extension ObservableType {
     }
 }
 
-final fileprivate class Connection<S: SubjectType>: ObserverType, Disposable {
+final private class Connection<S: SubjectType>: ObserverType, Disposable {
     typealias E = S.SubjectObserverType.E
 
     private var _lock: RecursiveLock
@@ -194,7 +194,7 @@ final fileprivate class Connection<S: SubjectType>: ObserverType, Disposable {
     }
 }
 
-final fileprivate class ConnectableObservableAdapter<S: SubjectType>
+final private class ConnectableObservableAdapter<S: SubjectType>
    : ConnectableObservable<S.E> {
     typealias ConnectionType = Connection<S>
 
@@ -244,7 +244,7 @@ final fileprivate class ConnectableObservableAdapter<S: SubjectType>
     }
 }
 
-final fileprivate class RefCountSink<CO: ConnectableObservableType, O: ObserverType>
+final private class RefCountSink<CO: ConnectableObservableType, O: ObserverType>
    : Sink<O>
     , ObserverType where CO.E == O.E {
     typealias Element = O.E
@@ -324,7 +324,7 @@ final fileprivate class RefCountSink<CO: ConnectableObservableType, O: ObserverT
     }
 }
 
-final fileprivate class RefCount<CO: ConnectableObservableType>: Producer<CO.E> {
+final private class RefCount<CO: ConnectableObservableType>: Producer<CO.E> {
     fileprivate let _lock = RecursiveLock()
 
     // state
@@ -345,7 +345,7 @@ final fileprivate class RefCount<CO: ConnectableObservableType>: Producer<CO.E> 
     }
 }
 
-final fileprivate class MulticastSink<S: SubjectType, O: ObserverType>: Sink<O>, ObserverType {
+final private class MulticastSink<S: SubjectType, O: ObserverType>: Sink<O>, ObserverType {
     typealias Element = O.E
     typealias ResultType = Element
     typealias MutlicastType = Multicast<S, O.E>
@@ -386,7 +386,7 @@ final fileprivate class MulticastSink<S: SubjectType, O: ObserverType>: Sink<O>,
     }
 }
 
-final fileprivate class Multicast<S: SubjectType, R>: Producer<R> {
+final private class Multicast<S: SubjectType, R>: Producer<R> {
     typealias SubjectSelectorType = () throws -> S
     typealias SelectorType = (Observable<S.E>) throws -> Observable<R>
     
