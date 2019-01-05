@@ -41,4 +41,3 @@ public class Observable<Element>: ObservableType {
         return _map(source: self, transform: transform)
     }
 }
-

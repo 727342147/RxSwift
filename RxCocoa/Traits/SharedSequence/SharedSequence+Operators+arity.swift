@@ -652,5 +652,3 @@ extension SharedSequenceConvertibleType where E == Any {
         return SharedSequence<O1.SharingStrategy, (O1.E, O2.E, O3.E, O4.E, O5.E, O6.E, O7.E, O8.E)>(source)
     }
 }
-
-

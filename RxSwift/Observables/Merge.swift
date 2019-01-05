@@ -208,7 +208,7 @@ fileprivate final class MergeLimitedBasicSink<SourceSequence: ObservableConverti
 
 fileprivate class MergeLimitedSink<SourceElement, SourceSequence: ObservableConvertibleType, Observer: ObserverType>
    : Sink<Observer>
-    , ObserverType where Observer.E == SourceSequence.E  {
+    , ObserverType where Observer.E == SourceSequence.E {
     typealias QueueType = Queue<SourceSequence>
 
     let _maxConcurrent: Int

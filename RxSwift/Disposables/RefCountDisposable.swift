@@ -50,12 +50,10 @@ public final class RefCountDisposable: DisposeBase, Cancelable {
     /// Disposes the underlying disposable only when all dependent disposables have been disposed.
     public func dispose() {
         let oldDisposable: Disposable? = _lock.calculateLocked {
-            if let oldDisposable = _disposable, !_primaryDisposed
-            {
+            if let oldDisposable = _disposable, !_primaryDisposed {
                 _primaryDisposed = true
 
-                if (_count == 0)
-                {
+                if (_count == 0) {
                     _disposable = nil
                     return oldDisposable
                 }
@@ -102,8 +100,7 @@ internal final class RefCountInnerDisposable: DisposeBase, Disposable
     private let _parent: RefCountDisposable
     private var _isDisposed = AtomicInt(0)
 
-    init(_ parent: RefCountDisposable)
-    {
+    init(_ parent: RefCountDisposable) {
         _parent = parent
         super.init()
     }

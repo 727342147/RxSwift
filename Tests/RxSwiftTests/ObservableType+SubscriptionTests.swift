@@ -62,4 +62,3 @@ extension ObservableSubscriptionTest {
         XCTAssertEqual(resultCallstack, ["frame1", "frame2"])
     }
 }
-

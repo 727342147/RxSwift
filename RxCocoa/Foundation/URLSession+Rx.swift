@@ -240,4 +240,3 @@ extension Reactive where Base: URLSession {
         return json(request: URLRequest(url: url))
     }
 }
-

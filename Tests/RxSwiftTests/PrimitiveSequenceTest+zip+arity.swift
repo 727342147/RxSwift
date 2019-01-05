@@ -290,5 +290,3 @@ extension MaybeTest {
         XCTAssertEqual(result, 8)
     }
 }
-
-

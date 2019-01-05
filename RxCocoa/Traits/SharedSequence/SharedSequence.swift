@@ -226,4 +226,3 @@ extension SharedSequence where Element: RxAbstractInteger {
         return SharedSequence(Observable.timer(dueTime, period: period, scheduler: S.scheduler))
     }
 }
-

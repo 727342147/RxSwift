@@ -120,7 +120,7 @@ class TailRecursiveSink<S: Sequence, O: ObserverType>
             }
         } while next == nil
 
-        guard let existingNext = next else  {
+        guard let existingNext = next else {
             done()
             return
         }
@@ -148,4 +148,3 @@ class TailRecursiveSink<S: Sequence, O: ObserverType>
         schedule(.dispose)
     }
 }
-

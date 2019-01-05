@@ -77,9 +77,7 @@ public struct ControlProperty<PropertyType>: ControlPropertyType {
     /// adjacent sequence values need to be different (e.g. because of interaction between programmatic and user updates,
     /// or for any other reason).
     public var changed: ControlEvent<PropertyType> {
-        get {
-            return ControlEvent(events: _values.skip(1))
-        }
+        return ControlEvent(events: _values.skip(1))
     }
 
     /// - returns: `Observable` interface.

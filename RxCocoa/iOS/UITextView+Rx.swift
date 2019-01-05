@@ -91,33 +91,25 @@ extension Reactive where Base: UITextView {
     /// Reactive wrapper for `delegate` message.
     public var didBeginEditing: ControlEvent<()> {
        return ControlEvent<()>(events: self.delegate.methodInvoked(#selector(UITextViewDelegate.textViewDidBeginEditing(_:)))
-            .map { a in
-                return ()
-            })
+            .map { _ in () })
     }
 
     /// Reactive wrapper for `delegate` message.
     public var didEndEditing: ControlEvent<()> {
         return ControlEvent<()>(events: self.delegate.methodInvoked(#selector(UITextViewDelegate.textViewDidEndEditing(_:)))
-            .map { a in
-                return ()
-            })
+            .map { _ in () })
     }
 
     /// Reactive wrapper for `delegate` message.
     public var didChange: ControlEvent<()> {
         return ControlEvent<()>(events: self.delegate.methodInvoked(#selector(UITextViewDelegate.textViewDidChange(_:)))
-            .map { a in
-                return ()
-            })
+            .map { _ in () })
     }
 
     /// Reactive wrapper for `delegate` message.
     public var didChangeSelection: ControlEvent<()> {
         return ControlEvent<()>(events: self.delegate.methodInvoked(#selector(UITextViewDelegate.textViewDidChangeSelection(_:)))
-            .map { a in
-                return ()
-            })
+            .map { _ in () })
     }
 
 }

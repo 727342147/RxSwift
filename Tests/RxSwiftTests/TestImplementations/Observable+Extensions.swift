@@ -20,4 +20,3 @@ extension TestableObservable: Equatable {
 public func == <T>(lhs: TestableObservable<T>, rhs: TestableObservable<T>) -> Bool {
     return lhs === rhs
 }
-

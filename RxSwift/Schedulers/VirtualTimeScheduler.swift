@@ -141,7 +141,7 @@ open class VirtualTimeScheduler<Converter: VirtualTimeConverterType>
                 break
             }
 
-            if _converter.compareVirtualTime(next.time, self.clock).greaterThan  {
+            if _converter.compareVirtualTime(next.time, self.clock).greaterThan {
                 _clock = next.time
             }
 
@@ -185,7 +185,7 @@ open class VirtualTimeScheduler<Converter: VirtualTimeConverterType>
                 break
             }
 
-            if _converter.compareVirtualTime(next.time, self.clock).greaterThan  {
+            if _converter.compareVirtualTime(next.time, self.clock).greaterThan {
                 _clock = next.time
             }
 

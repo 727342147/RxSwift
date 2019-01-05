@@ -944,5 +944,3 @@ final class Zip8<E1, E2, E3, E4, E5, E6, E7, E8, R>: Producer<R> {
         return (sink: sink, subscription: subscription)
     }
 }
-
-

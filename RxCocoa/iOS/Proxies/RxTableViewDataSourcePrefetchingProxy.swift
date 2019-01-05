@@ -20,8 +20,7 @@ extension UITableView: HasPrefetchDataSource {
 fileprivate let tableViewPrefetchDataSourceNotSet = TableViewPrefetchDataSourceNotSet()
 
 @available(iOS 10.0, tvOS 10.0, *)
-fileprivate final class TableViewPrefetchDataSourceNotSet
-   : NSObject
+fileprivate final class TableViewPrefetchDataSourceNotSet: NSObject
     , UITableViewDataSourcePrefetching {
 
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {}
@@ -29,10 +28,9 @@ fileprivate final class TableViewPrefetchDataSourceNotSet
 }
 
 @available(iOS 10.0, tvOS 10.0, *)
-open class RxTableViewDataSourcePrefetchingProxy
-   : DelegateProxy<UITableView, UITableViewDataSourcePrefetching>
-    , DelegateProxyType
-    , UITableViewDataSourcePrefetching {
+open class RxTableViewDataSourcePrefetchingProxy: DelegateProxy<UITableView, UITableViewDataSourcePrefetching>,
+    DelegateProxyType,
+    UITableViewDataSourcePrefetching {
 
     /// Typed parent object.
     public weak private(set) var tableView: UITableView?
@@ -90,4 +88,3 @@ open class RxTableViewDataSourcePrefetchingProxy
 }
 
 #endif
-

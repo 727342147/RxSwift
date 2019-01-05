@@ -334,7 +334,6 @@ extension ObservableScanTest {
             ])
     }
 
-
     #if TRACE_RESOURCES
         func testScanReleasesResourcesOnComplete() {
             _ = Observable<Int>.just(1).scan(0, accumulator: +).subscribe()
@@ -349,4 +348,3 @@ extension ObservableScanTest {
         }
     #endif
 }
-

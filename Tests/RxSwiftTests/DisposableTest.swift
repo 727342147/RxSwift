@@ -29,8 +29,7 @@ class DisposableTest: RxTest {
 }
 
 // action
-extension DisposableTest
-{
+extension DisposableTest {
     func testActionDisposable() {
         var counter = 0
         
@@ -85,8 +84,7 @@ extension DisposableTest {
 }
 
 // composite disposable
-extension DisposableTest
-{
+extension DisposableTest {
     func testCompositeDisposable_TestNormal() {
         var numberDisposed = 0
         let compositeDisposable = CompositeDisposable()

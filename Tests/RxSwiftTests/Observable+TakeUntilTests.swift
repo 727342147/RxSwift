@@ -637,4 +637,3 @@ extension ObservableTakeUntilTest {
             ])
     }
 }
-

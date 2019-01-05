@@ -16,9 +16,9 @@
     }
 
     open class RxPickerViewDelegateProxy
-       : DelegateProxy<UIPickerView, UIPickerViewDelegate>
-        , DelegateProxyType 
-        , UIPickerViewDelegate {
+       : DelegateProxy<UIPickerView, UIPickerViewDelegate>,
+        DelegateProxyType,
+        UIPickerViewDelegate {
 
         /// Typed parent object.
         public weak private(set) var pickerView: UIPickerView?

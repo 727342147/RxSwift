@@ -85,7 +85,7 @@ final fileprivate class DelaySink<O: ObserverType>
 
                 if let _ = errorEvent {
                 }
-                else  {
+                else {
                     if let _ = eventToForwardImmediately {
                     }
                     else if let _ = nextEventToScheduleOriginalTime {

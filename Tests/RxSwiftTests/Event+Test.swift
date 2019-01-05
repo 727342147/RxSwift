@@ -39,4 +39,3 @@ extension EventTests {
         XCTAssertEqual(Event.completed, original.map { _ -> Int in throw testError }) { $0 == $1 }
     }
 }
-

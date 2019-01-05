@@ -47,7 +47,7 @@ extension ObservableBlockingTest {
         for i in 0 ..< 10 {
             let scheduler = ConcurrentDispatchQueueScheduler(qos: .default)
 
-            func operation1()->Observable<Int>{
+            func operation1() -> Observable<Int> {
                 return Observable.of(1, 2).subscribeOn(scheduler)
             }
 
@@ -104,7 +104,7 @@ extension ObservableBlockingTest {
         for i in 0 ..< 10 {
             let scheduler = ConcurrentDispatchQueueScheduler(qos: .default)
 
-            func operation1()->Observable<Int>{
+            func operation1() -> Observable<Int> {
                 return Observable.just(1).subscribeOn(scheduler)
             }
 
@@ -161,7 +161,7 @@ extension ObservableBlockingTest {
         for i in 0 ..< 10 {
             let scheduler = ConcurrentDispatchQueueScheduler(qos: .background)
 
-            func operation1()->Observable<Int>{
+            func operation1() -> Observable<Int> {
                 return Observable.just(1).subscribeOn(scheduler)
             }
 
@@ -246,10 +246,10 @@ extension ObservableBlockingTest {
     func testSingle_predicate_someData_two_match() {
         var predicateVals = [Int]()
         do {
-            _ = try Observable.of(42, 43, 44, 45).toBlocking().single( { e in
+            _ = try Observable.of(42, 43, 44, 45).toBlocking().single { e in
                 predicateVals.append(e)
                 return e >= 43
-            } )
+            }
             XCTFail()
         }
         catch let e {
@@ -277,11 +277,11 @@ extension ObservableBlockingTest {
     func testSingle_predicate_throws() {
         var predicateVals = [Int]()
         do {
-            _ = try Observable.of(42, 43, 44, 45, scheduler: CurrentThreadScheduler.instance).toBlocking().single( { e in
+            _ = try Observable.of(42, 43, 44, 45, scheduler: CurrentThreadScheduler.instance).toBlocking().single { e in
                 predicateVals.append(e)
                 if e < 43 { return false }
                 throw testError
-            } )
+            }
             XCTFail()
         }
         catch let e {
@@ -300,7 +300,7 @@ extension ObservableBlockingTest {
         let element = try! Observable<Int64>.interval(0.001, scheduler: scheduler)
             .take(4)
             .toBlocking()
-            .single( { $0 == 3 } )
+            .single { $0 == 3 }
         
         XCTAssertEqual(element, 3)
     }

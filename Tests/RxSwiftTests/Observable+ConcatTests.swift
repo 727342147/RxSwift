@@ -664,5 +664,3 @@ extension ObservableConcatTest {
         }
     #endif
 }
-
-

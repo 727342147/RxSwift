@@ -46,7 +46,7 @@ extension ObservableType where E: RxAbstractInteger {
     }
 }
 
-final fileprivate class TimerSink<O: ObserverType>: Sink<O> where O.E: RxAbstractInteger  {
+final fileprivate class TimerSink<O: ObserverType>: Sink<O> where O.E: RxAbstractInteger {
     typealias Parent = Timer<O.E>
     
     private let _parent: Parent

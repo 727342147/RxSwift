@@ -106,4 +106,3 @@ final fileprivate class Reduce<SourceType, AccumulateType, ResultType>: Producer
         return (sink: sink, subscription: subscription)
     }
 }
-

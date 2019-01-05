@@ -152,4 +152,3 @@ public final class AsyncSubject<Element>
     }
     #endif
 }
-

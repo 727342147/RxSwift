@@ -53,4 +53,3 @@ public func == <T: Equatable>(lhs: Recorded<Event<T?>>, rhs: Recorded<Event<T?>>
     return lhs.time == rhs.time && lhs.value == rhs.value
 }
 #endif
-

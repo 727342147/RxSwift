@@ -56,4 +56,3 @@ class PrimitiveHotObservable<ElementType>: ObservableType {
         }
     }
 }
-

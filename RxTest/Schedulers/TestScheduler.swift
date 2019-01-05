@@ -148,5 +148,3 @@ public class TestScheduler: VirtualTimeScheduler<TestSchedulerVirtualTimeConvert
         return start(created: Defaults.created, subscribed: Defaults.subscribed, disposed: Defaults.disposed, create: create)
     }
 }
-
-

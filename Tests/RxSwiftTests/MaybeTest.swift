@@ -693,6 +693,3 @@ extension MaybeTest {
         XCTAssertEqual(loggedErrors, [testError])
     }
 }
-
-
-

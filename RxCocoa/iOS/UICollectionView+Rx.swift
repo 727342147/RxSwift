@@ -137,8 +137,7 @@ extension Reactive where Base: UICollectionView {
             O: ObservableType>
         (dataSource: DataSource)
         -> (_ source: O)
-        -> Disposable where DataSource.Element == O.E
-          {
+        -> Disposable where DataSource.Element == O.E {
         return { source in
             // This is called for sideeffects only, and to make sure delegate proxy is in place when
             // data source is being bound.
