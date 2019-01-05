@@ -384,7 +384,7 @@ fileprivate final class KVOObservable<Element>
     }
 
     func subscribe<O: ObserverType>(_ observer: O) -> Disposable where O.E == Element? {
-        let observer = KVOObserver(parent: self) { (value) in
+        let observer = KVOObserver(parent: self) { value in
             if value as? NSNull != nil {
                 observer.on(.next(nil))
                 return
