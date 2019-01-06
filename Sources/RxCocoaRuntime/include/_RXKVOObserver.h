@@ -15,7 +15,7 @@
  */
 
 // Exists because if written in Swift, reading unowned is disabled during dealloc process
-@interface _RXKVOObserver : NSObject
+@interface _RXKVOObserver: NSObject
 
 -(instancetype)initWithTarget:(id)target
                  retainTarget:(BOOL)retainTarget
